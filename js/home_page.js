@@ -113,6 +113,8 @@ $(".btn-info").click(
                 alert("新增成功");
                 $("#add").css("display","none");
                 $("#list").css("display","none");
+                $("ul").empty();
+                get_record();
             },
             error: function(err) { 
                 console.log(err);
