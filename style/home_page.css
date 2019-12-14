@@ -1,13 +1,14 @@
+* {
+  outline: solid 1px white;
+}
+
 body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: 'Nunito';
   height: 100vh;
   padding: 100px calc( (100% - 400px)/2);
-  background-image: url(../pic/polly_login.jpg);
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  background-color: #AEE7E8;
 }
 
 @media (max-width: 1024px) {

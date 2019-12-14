@@ -80,14 +80,14 @@ body {
   }
 }
 
-.card .btn-login {
+.card .btn-login, .card .btn-register {
   background-color: #7a7265;
   border-color: #c6ad94;
   margin-right: 20px;
 }
 
 @media (max-width: 1024px) {
-  .card .btn-login {
+  .card .btn-login, .card .btn-register {
     margin-right: auto;
   }
 }

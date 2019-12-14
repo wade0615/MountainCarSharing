@@ -1,13 +1,7 @@
 // 使用者登入 api
-var send_login = "https://bboa14171205.nctu.me/api/user/login"
+var send_login = "http://35.194.168.18/api/login"
 // 使用者註冊 api
-var send_sign_up = "https://bboa14171205.nctu.me/api/user/register"
-
-// $("h5").click(
-//     function() {
-//         window.location.href='./index.html'
-//     }
-// )
+var send_sign_up = "http://35.194.168.18/api/register"
 
 $(".bt-sign-up").click(
     function() {
@@ -22,39 +16,71 @@ $(".bt-sign-in").click(
     }
 )
 
+// 登入
 $(".btn-login").click(
     function() {
-        console.log($("#username").val())
-        console.log($("#pw").val())
+        console.log($("#login_username").val())
+        console.log($("#login_pw").val())
         $(this).html("LOADING...")
         $.ajax({
             url: send_login,
             type: 'POST',
             datatype: 'json',
-            data:{
-                // username: $("#username").val(),
-                account: $("#account").val(),
-                password: $("#pw").val()
-            },
+            contentType: "application/json",
+            accepts: "application/json",
+            data: JSON.stringify({
+                email: $("#login_username").val(),
+                password: $("#login_pw").val()
+            }),
             success: function(json) {
                 // console.log(json);
                 // console.log(json.api_token);
                 document.cookie = `login_cookie = ${json.api_token}`;
                 cookie = document.cookie.split("=");
-                // console.log(cookie[1]);
-                // console.log(json.name);
-                if (json.name == "Bank") {
-                    console.log("開始洗錢囉");
-                    window.location.href='./admin.html'
-                }else{
-                    console.log("歡迎加入");
-                    window.location.href='./country_imfor.html'
-            }
+                console.log(cookie[1]);
+                window.location.href='./home_page.html'
             },
             error: function(err) { 
                 console.log(err);
-                alert("SERIOUSLY ? Don't U remember Ur passwords?"); 
+                alert("帳號或密碼有誤...請再試一次");
                 $(".btn-login").html("LOG IN AGAIN")
+            },
+            });
+    }
+)
+
+// 註冊
+$(".btn-register").click(
+    function() {
+        console.log($("#register_username").val())
+        console.log($("#register_pw").val())
+        console.log($("#register_pw2").val())
+        $(this).html("註冊中...")
+        $.ajax({
+            url: send_sign_up,
+            type: 'POST',
+            datatype: 'json',
+            contentType: "application/json",
+            accepts: "application/json",
+            data: JSON.stringify({
+                email: $("#register_username").val(),
+                password:$("#register_pw").val(),
+                password_confirmation:$("#register_pw2").val()
+            }),
+            beforeSend: function(){
+                console.log(this)
+            },
+            success: function(json) {
+                // console.log(json);
+                // console.log(json.api_token);
+                // document.cookie = `login_cookie = ${json.api_token}`;
+                // cookie = document.cookie.split("=");
+                // console.log(cookie[1]);
+                alert("成功註冊");
+            },
+            error: function(err) { 
+                console.log(err);
+                alert("規格有誤...請再試一次");
             },
             });
     }
