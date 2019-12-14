@@ -5,7 +5,7 @@
 
 
 *
-    outline: solid 1px white
+    // outline: solid 1px white
 
 body
     box-sizing: border-box
@@ -23,14 +23,24 @@ body
 
 header
     position: relative
-    .back
-        display: inline-block
-        // font-size: 20px
-        font-size: 0
-        height: 42px
+    .search,.add
+        font-size: 1rem
+        float: right
+        width: 36px
+        height: 36px
+        cursor: pointer
+        border: solid 2px black
+        border-radius: 50%
+        background-size: 70%
+        background-position: center center
+        background-repeat: no-repeat
+    .search
+        background-image: url(../pic/loupe.png)
+        margin-right: 10px
+    .add
+        background-image: url(../pic/plus-sign.png)
     button
-        position: absolute
-        right: 0
+        
 
 main
     .card
