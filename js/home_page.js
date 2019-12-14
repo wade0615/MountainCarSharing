@@ -101,20 +101,22 @@ $(".btn-info").click(
                 "Content-Type": "application/json; charset=utf-8",
                 Authorization: `Bearer ${cookie[1]}`
             },
-            data:{},
+            data: JSON.stringify({
+                subject: $("#add_subject").val(),
+                departure_date: $("#add_departure_date").val(),
+                departure: $("#add_departure").val(),
+                destination: $("#add_destination").val(),
+                description: $("#add_description").val(),
+                seat: $("#add_seat").val(),
+            }),
             success: function() {
-                // console.log(json);
-                // console.log(json.api_token);
-                // document.cookie = `login_cookie = ${json.api_token}`;
-                // cookie = document.cookie.split("=");
-                // console.log(cookie[1]);
                 alert("新增成功");
-                // window.location.href='./index.html'
+                $("#add").css("display","none");
+                $("#list").css("display","none");
             },
             error: function(err) { 
                 console.log(err);
                 alert("新增失敗");
-                // $(".btn-login").html("LOG OUT AGAIN")
             },
             });
     }
