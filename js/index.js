@@ -25,17 +25,18 @@ $(".btn-login").click(
         $.ajax({
             url: send_login,
             type: 'POST',
-            datatype: 'json',
-            contentType: "application/json",
-            accepts: "application/json",
+            headers: {
+                Accept: "application/json; charset=utf-8",
+                "Content-Type": "application/json; charset=utf-8",
+            },
             data: JSON.stringify({
                 email: $("#login_username").val(),
                 password: $("#login_pw").val()
             }),
             success: function(json) {
                 // console.log(json);
-                // console.log(json.api_token);
-                document.cookie = `login_cookie = ${json.api_token}`;
+                console.log(json.data[0]);
+                document.cookie = `login_cookie = ${json.data[0].token}`;
                 cookie = document.cookie.split("=");
                 console.log(cookie[1]);
                 window.location.href='./home_page.html'
@@ -59,9 +60,10 @@ $(".btn-register").click(
         $.ajax({
             url: send_sign_up,
             type: 'POST',
-            datatype: 'json',
-            contentType: "application/json",
-            accepts: "application/json",
+            headers: {
+                Accept: "application/json; charset=utf-8",
+                "Content-Type": "application/json; charset=utf-8",
+            },
             data: JSON.stringify({
                 email: $("#register_username").val(),
                 password:$("#register_pw").val(),
