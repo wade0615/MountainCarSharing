@@ -5,14 +5,14 @@
 
 
 *
-    outline: solid 1px white
+    // outline: solid 1px black
 
 body
     box-sizing: border-box
     font-family: 'Nunito'
     // font-size: 0
     height: 100vh
-    padding: 100px calc( (100% - 400px)/2 )
+    padding: 100px 200px
     // background-image: url(../pic/polly_login.jpg)
     // background-size: cover
     // background-position: center center
@@ -23,7 +23,7 @@ body
 
 header
     position: relative
-    .search,.add
+    .btn-search,.btn-add
         font-size: 1rem
         float: right
         width: 36px
@@ -34,16 +34,56 @@ header
         background-size: 70%
         background-position: center center
         background-repeat: no-repeat
-    .search
+    .btn-search
         background-image: url(../pic/loupe.png)
         margin-right: 10px
-    .add
+    .btn-add
         background-image: url(../pic/plus-sign.png)
     button
         
 
 main
-    .card
-        
-    .nav
-        
+    ol
+        margin: 0
+        padding: 0
+        margin-top: 20px
+        font-size: 30px
+    li
+        list-style-position: inside
+        border-bottom: 1px solid #000
+        span
+            margin-right: 10px
+        p
+            display: inline
+
+section
+    display: none
+    position: absolute
+    width: 100%
+    height: 100vh
+    top: 0
+    left: 0
+    padding: 100px 200px
+    background-color: rgba(170, 170, 170, 0.7)
+    @include mediaquery-mobile
+        padding: 40px 0
+        // height: auto
+.add
+    width: 400px
+    margin: 0 auto
+    padding: 20px
+    background-color: #fff
+    border-radius: 20px
+    @include mediaquery-mobile
+        width: auto
+    h5
+        font-size: 30px
+        text-align: center
+        margin-bottom: 2rem
+    input
+        margin-bottom: 10px
+    button
+        display: block
+        margin: 10px auto 0
+
+

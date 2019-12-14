@@ -13,21 +13,42 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <!-- 誰都不能覆蓋我的css -->
     <link rel="stylesheet" href="./style/home_page.css">
-    <!-- 闆娘指定字型 -->
+    <!-- Nunito字型 -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 </head>
 <body>
     <header>
         <button type="button" class="btn btn-danger">log out</button>
-        <div class="add"></div>
-        <div class="search"></div>
+        <div class="btn-add"></div>
+        <div class="btn-search"></div>
     </header>
-    <main class="card bg-transparent">
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link active" href="#">重新整理</a>
+    <main>
+        <ol>
+            <li>
+                <span class="active" href="#">[站內]</span>
+                <p>鳶嘴山之行</p>
             </li>
-        </ul>
+            <li>
+                <span class="active" href="#">[站內]</span>
+                <p>鳶嘴山之行</p>
+            </li>
+        </ol>
     </main>
+    <section>
+        <div class="add">
+            <h5 class="card-title">新增共乘</h5>
+            <input type="text" class="form-control col-sm-9" id="inputPassword" placeholder="共乘主題">
+            <input type="text" class="form-control col-sm-9" id="inputPassword2" placeholder="出發日期YYYY/MM/DD">
+            <input type="text" class="form-control col-sm-9" id="inputPassword3" placeholder="出發地">
+            <input type="text" class="form-control col-sm-9" id="inputPassword4" placeholder="目的地">
+            <input type="text" class="form-control col-sm-9" id="inputPassword5" placeholder="剩餘座位">
+            <h3>備註</h3>
+            <input type="text" class="form-control" id="inputPassword6" placeholder="敘述活動內容">
+            <button type="button" class="btn btn-block btn-info">完成</button>
+            <button type="button" class="btn btn-block btn-secondary">取消</button>
+        </div>
+    </section>
+
+    <script src="./js/home_page.js"></script>
 </body>
 </html>
