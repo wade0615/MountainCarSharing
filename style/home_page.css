@@ -4,7 +4,11 @@ body {
   font-family: 'Nunito';
   height: 100vh;
   padding: 100px 200px;
-  background-color: #AEE7E8;
+  background-image: url(../pic/hiking.png);
+  background-size: contain;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-color: #000D27;
 }
 
 @media (max-width: 1024px) {
@@ -28,6 +32,7 @@ header .btn-search, header .btn-add {
   background-size: 70%;
   background-position: center center;
   background-repeat: no-repeat;
+  background-color: #28C3D4;
 }
 
 header .btn-search {
@@ -39,11 +44,17 @@ header .btn-add {
   background-image: url(../pic/plus-sign.png);
 }
 
-main ol {
+main {
+  background-color: rgba(170, 170, 170, 0.5);
+  color: white;
+}
+
+main ul {
   margin: 0;
   padding: 0;
   margin-top: 20px;
   font-size: 30px;
+  list-style-type: none;
 }
 
 main li {
@@ -55,8 +66,14 @@ main li span {
   margin-right: 10px;
 }
 
-main li p {
+main li p, main li a {
   display: inline;
+}
+
+@media (max-width: 1024px) {
+  main li p, main li a {
+    font-size: 22px;
+  }
 }
 
 section {
@@ -76,7 +93,7 @@ section {
   }
 }
 
-.add {
+.add, .list {
   width: 400px;
   margin: 0 auto;
   padding: 20px;
@@ -85,22 +102,22 @@ section {
 }
 
 @media (max-width: 1024px) {
-  .add {
+  .add, .list {
     width: auto;
   }
 }
 
-.add h5 {
+.add h5, .list h5 {
   font-size: 30px;
   text-align: center;
   margin-bottom: 2rem;
 }
 
-.add input {
+.add input, .list input {
   margin-bottom: 10px;
 }
 
-.add button {
+.add button, .list button {
   display: block;
   margin: 10px auto 0;
 }

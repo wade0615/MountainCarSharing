@@ -13,11 +13,12 @@ body
     // font-size: 0
     height: 100vh
     padding: 100px 200px
-    // background-image: url(../pic/polly_login.jpg)
-    // background-size: cover
-    // background-position: center center
-    // background-repeat: no-repeat
-    background-color: #AEE7E8
+    background-image: url(../pic/hiking.png)
+    background-size: contain
+    background-position: top center
+    background-repeat: no-repeat
+    // background-color: #AEE7E8
+    background-color: #000D27
     @include mediaquery-mobile
         padding: 50px 30px
 
@@ -34,6 +35,7 @@ header
         background-size: 70%
         background-position: center center
         background-repeat: no-repeat
+        background-color: #28C3D4
     .btn-search
         background-image: url(../pic/loupe.png)
         margin-right: 10px
@@ -43,18 +45,23 @@ header
         
 
 main
-    ol
+    background-color: rgba(170, 170, 170, 0.5)
+    color: white
+    ul
         margin: 0
         padding: 0
         margin-top: 20px
         font-size: 30px
+        list-style-type: none
     li
         list-style-position: inside
         border-bottom: 1px solid #000
         span
             margin-right: 10px
-        p
+        p,a
             display: inline
+            @include mediaquery-mobile
+                font-size: 22px
 
 section
     display: none
@@ -68,7 +75,7 @@ section
     @include mediaquery-mobile
         padding: 40px 0
         // height: auto
-.add
+.add,.list
     width: 400px
     margin: 0 auto
     padding: 20px
