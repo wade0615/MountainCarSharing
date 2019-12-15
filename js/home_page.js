@@ -1,6 +1,6 @@
 
 // 定義 站內共乘資訊 的url
-var record = "http://35.194.168.18/api/post"
+var record = "http://35.194.168.18/api/post?row=100"
 
 // 定義 登出 的url
 var logout = "http://35.194.168.18/api/logout"
@@ -133,29 +133,30 @@ function recordlist() {
             if ( array["type"] == 1 ) {
                 $("ul").append(
                     `<li value="${array["id"]}">
-                        <span class="active">[站內]</span>
+                        <span>[站內]</span>
                         <p>${array["subject"]}</p>
                     </li>`
                 )
             } else if (array["type"] == 2) {
                 $("ul").append(
-                    `<li>
-                        <span class="active" href="#">[站外]</span>
+                    `<li value="${array["id"]}">
+                        <span>[站外]</span>
                         <p>${array["subject"]}</p>
                     </li>`
                 )
             }
-            
         }
     )
     more_imfor()
 }
 
+// 列出詳細資訊
 function more_imfor() {
     $("li").click(
         function () {
             console.log($(this).val());
             dota = $(this).val() - 1;
+            // dota = $(this).val() % 15 - 1;
             console.log(dota);
             $("#list").css("display","block");
             // console.log(data[$(this).val()].subject);
@@ -168,7 +169,7 @@ function more_imfor() {
         }
     )
 }
-
+// 清空詳細資訊
 function clean_records() {
     $("#add_subject").val("")
     $("#add_departure_date").val("")
