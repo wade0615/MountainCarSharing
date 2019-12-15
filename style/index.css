@@ -81,8 +81,8 @@ body {
 }
 
 .card .btn-login, .card .btn-register {
-  background-color: #7a7265;
-  border-color: #c6ad94;
+  background-color: #248EA9;
+  border-color: #28C3D4;
   margin-right: 20px;
 }
 
@@ -92,10 +92,10 @@ body {
   }
 }
 
-.card .btn-login:hover, .card .bt-sign-up:hover, .card .bt-sign-in:hover {
+.card .btn-login:hover, .card .bt-sign-up:hover, .card .bt-sign-in:hover, .card .btn-register:hover {
   color: black;
-  background-color: #c6ad94;
-  border-color: #7a7265;
+  background-color: #28C3D4;
+  border-color: #28C3D4;
 }
 
 .card .bt-sign-up, .card .bt-sign-in {

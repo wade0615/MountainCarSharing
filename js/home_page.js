@@ -140,7 +140,7 @@ function recordlist() {
             } else if (array["type"] == 2) {
                 $("ul").append(
                     `<li value="${array["id"]}">
-                        <span>[站外]</span>
+                        <span>[PTT]</span>
                         <p>${array["subject"]}</p>
                     </li>`
                 )
