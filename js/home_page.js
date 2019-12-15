@@ -115,6 +115,7 @@ $(".btn-info").click(
                 $("#list").css("display","none");
                 $("ul").empty();
                 get_record();
+                clean_records();
             },
             error: function(err) { 
                 console.log(err);
@@ -168,3 +169,11 @@ function more_imfor() {
     )
 }
 
+function clean_records() {
+    $("#add_subject").val("")
+    $("#add_departure_date").val("")
+    $("#add_departure").val("")
+    $("#add_destination").val("")
+    $("#add_seat").val("")
+    $("#add_description").val("")
+}

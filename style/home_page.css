@@ -45,8 +45,14 @@ header .btn-add {
 }
 
 main {
-  background-color: rgba(170, 170, 170, 0.5);
+  background-color: rgba(170, 170, 170, 0.8);
   color: white;
+}
+
+@media (max-width: 1024px) {
+  main {
+    background-color: rgba(170, 170, 170, 0.5);
+  }
 }
 
 main ul {
@@ -55,11 +61,14 @@ main ul {
   margin-top: 20px;
   font-size: 30px;
   list-style-type: none;
+  height: 70vh;
+  overflow: scroll;
 }
 
 main li {
   list-style-position: inside;
   border-bottom: 1px solid #000;
+  margin-top: 15px;
 }
 
 main li span {
