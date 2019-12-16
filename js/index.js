@@ -1,7 +1,7 @@
 // 使用者登入 api
-var send_login = "http://35.194.168.18/api/login"
+var send_login = "http://rayoutstanding.space/api/login"
 // 使用者註冊 api
-var send_sign_up = "http://35.194.168.18/api/register"
+var send_sign_up = "http://rayoutstanding.space/api/register"
 
 $(".bt-sign-up").click(
     function() {

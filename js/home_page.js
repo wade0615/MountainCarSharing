@@ -1,12 +1,12 @@
 
 // 定義 站內共乘資訊 的url
-var record = "http://35.194.168.18/api/post?row=100"
+var record = "http://rayoutstanding.space/api/post?row=100"
 
 // 定義 登出 的url
-var logout = "http://35.194.168.18/api/logout"
+var logout = "http://rayoutstanding.space/api/logout"
 
 // 定義 新增共乘 的url
-var post = "http://35.194.168.18/api/post"
+var post = "http://rayoutstanding.space/api/post"
 
 // get cookie
 cookie = document.cookie.split("=");
