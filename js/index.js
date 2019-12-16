@@ -73,11 +73,6 @@ $(".btn-register").click(
                 console.log(this)
             },
             success: function(json) {
-                // console.log(json);
-                // console.log(json.api_token);
-                // document.cookie = `login_cookie = ${json.api_token}`;
-                // cookie = document.cookie.split("=");
-                // console.log(cookie[1]);
                 alert("成功註冊");
             },
             error: function(err) { 

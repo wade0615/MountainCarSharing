@@ -40,8 +40,6 @@ function get_record(){
         type = data[0].type;
         console.log(type);
         recordlist();
-        // message = json.message
-        // level = json.message.level;
     },
     error: function(err) { 
         console.log(err);
