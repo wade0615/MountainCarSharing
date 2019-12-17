@@ -127,18 +127,20 @@ $(".btn-info").click(
 function recordlist() {
     console.log("陣列出共乘資訊");
     data.forEach(
-        function (array) {
+        function (array, index) {
+            // console.log(index)
+            // console.log(array)
             if ( array["type"] == 1 ) {
                 $("ul").append(
-                    `<li value="${array["id"]}">
-                        <span>[站內]</span>
+                    `<li value="${index}">
+                        <span class="local_data">[站內]</span>
                         <p>${array["subject"]}</p>
                     </li>`
                 )
             } else if (array["type"] == 2) {
                 $("ul").append(
-                    `<li value="${array["id"]}">
-                        <span>[PTT]</span>
+                    `<li value="${index}">
+                        <span class="ptt_data">[PTT]</span>
                         <p>${array["subject"]}</p>
                     </li>`
                 )
@@ -153,8 +155,8 @@ function more_imfor() {
     $("li").click(
         function () {
             console.log($(this).val());
-            dota = $(this).val() - 1;
-            // dota = $(this).val() % 15 - 1;
+            // dota = $(this).val() - 1;
+            dota = $(this).val();
             console.log(dota);
             $("#list").css("display","block");
             // console.log(data[$(this).val()].subject);

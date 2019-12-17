@@ -75,6 +75,15 @@ main li span {
   margin-right: 10px;
 }
 
+main li .local_data {
+  color: #ffbb00;
+}
+
+main li .ptt_data {
+  color: #00ff04;
+  font-weight: bold;
+}
+
 main li p, main li a {
   display: inline;
 }
