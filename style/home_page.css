@@ -98,7 +98,6 @@ section {
   display: none;
   position: absolute;
   width: 100%;
-  height: 100vh;
   top: 0;
   left: 0;
   padding: 100px 200px;
@@ -133,6 +132,19 @@ section {
 
 .add input, .list input {
   margin-bottom: 10px;
+}
+
+.add textarea, .list textarea {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  background-color: rgba(247, 247, 247, 0.6);
+}
+
+.add textarea:focus, .list textarea:focus {
+  outline: none;
 }
 
 .add button, .list button {

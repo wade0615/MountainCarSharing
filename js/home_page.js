@@ -1,12 +1,12 @@
 
 // 定義 站內共乘資訊 的url
-var record = "http://rayoutstanding.space/api/post?row=100"
+var record = "http://carsharing.rayoutstanding.space/api/post?row=100"
 
 // 定義 登出 的url
-var logout = "http://rayoutstanding.space/api/logout"
+var logout = "http://carsharing.rayoutstanding.space/api/logout"
 
 // 定義 新增共乘 的url
-var post = "http://rayoutstanding.space/api/post"
+var post = "http://carsharing.rayoutstanding.space/api/post"
 
 // get cookie
 cookie = document.cookie.split("=");
@@ -154,10 +154,10 @@ function recordlist() {
 function more_imfor() {
     $("li").click(
         function () {
-            console.log($(this).val());
+            // console.log($(this).val());
             // dota = $(this).val() - 1;
             dota = $(this).val();
-            console.log(dota);
+            // console.log(dota);
             $("#list").css("display","block");
             // console.log(data[$(this).val()].subject);
             $("#list_subject").val(data[dota].subject)
