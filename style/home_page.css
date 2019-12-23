@@ -98,6 +98,7 @@ section {
   display: none;
   position: absolute;
   width: 100%;
+  min-height: 100vh;
   top: 0;
   left: 0;
   padding: 100px 200px;
@@ -110,7 +111,7 @@ section {
   }
 }
 
-.add, .list {
+.add, .list, .search {
   width: 400px;
   margin: 0 auto;
   padding: 20px;
@@ -119,22 +120,22 @@ section {
 }
 
 @media (max-width: 1024px) {
-  .add, .list {
+  .add, .list, .search {
     width: auto;
   }
 }
 
-.add h5, .list h5 {
+.add h5, .list h5, .search h5 {
   font-size: 30px;
   text-align: center;
   margin-bottom: 2rem;
 }
 
-.add input, .list input {
+.add input, .list input, .search input {
   margin-bottom: 10px;
 }
 
-.add textarea, .list textarea {
+.add textarea, .list textarea, .search textarea {
   display: block;
   margin: 0 auto;
   width: 100%;
@@ -143,12 +144,16 @@ section {
   background-color: rgba(247, 247, 247, 0.6);
 }
 
-.add textarea:focus, .list textarea:focus {
+.add textarea:focus, .list textarea:focus, .search textarea:focus {
   outline: none;
 }
 
-.add button, .list button {
+.add button, .list button, .search button {
   display: block;
   margin: 10px auto 0;
+}
+
+.search {
+  text-align: center;
 }
 /*# sourceMappingURL=home_page.css.map */

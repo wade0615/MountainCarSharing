@@ -48,6 +48,7 @@ function get_record(){
     });
 }
 
+// 點擊按鈕開始新增共乘
 $(".btn-add").click(
     function() {
         $("#add").css("display","block");        
@@ -56,6 +57,18 @@ $(".btn-add").click(
 $(".btn-secondary").click(
     function() {
         $("#add").css("display","none");
+        $("#list").css("display","none");
+    }
+)
+// 點擊按鈕開始搜尋共乘
+$(".btn-search").click(
+    function() {
+        $("#search").css("display","block");        
+    }
+)
+$(".btn-secondary").click(
+    function() {
+        $("#search").css("display","none");
         $("#list").css("display","none");
     }
 )
@@ -169,7 +182,7 @@ function more_imfor() {
         }
     )
 }
-// 清空詳細資訊
+// 清空新增欄位詳細資訊
 function clean_records() {
     $("#add_subject").val("")
     $("#add_departure_date").val("")
