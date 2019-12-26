@@ -1,12 +1,12 @@
 
 // 定義 站內共乘資訊 的url
-var record = "http://carsharing.rayoutstanding.space/api/post?row=100"
+var record = "https://carsharing.rayoutstanding.space/api/post?row=100"
 
 // 定義 登出 的url
-var logout = "http://carsharing.rayoutstanding.space/api/logout"
+var logout = "https://carsharing.rayoutstanding.space/api/logout"
 
 // 定義 新增共乘 的url
-var post = "http://carsharing.rayoutstanding.space/api/post"
+var post = "https://carsharing.rayoutstanding.space/api/post"
 
 // get cookie
 cookie = document.cookie.split("=");
@@ -15,6 +15,7 @@ cookie = document.cookie.split("=");
 // 一進畫面就先讀取一次第一筆資料
 $(document).ready(function(){
     console.log(cookie[1])
+    console.log(cookie)
     get_record();
 })
 
@@ -70,6 +71,7 @@ $(".btn-secondary").click(
     function() {
         $("#search").css("display","none");
         $("#list").css("display","none");
+        $("#list_ptt").css("display","none");
     }
 )
 
@@ -166,19 +168,28 @@ function recordlist() {
 // 列出詳細資訊
 function more_imfor() {
     $("li").click(
-        function () {
+        function (array) {
             // console.log($(this).val());
             // dota = $(this).val() - 1;
             dota = $(this).val();
             // console.log(dota);
-            $("#list").css("display","block");
+            console.log(data[dota].type);
             // console.log(data[$(this).val()].subject);
-            $("#list_subject").val(data[dota].subject)
-            $("#list_departure_date").val(data[dota].departure_date)
-            $("#list_departure").val(data[dota].departure)
-            $("#list_destination").val(data[dota].destination)
-            $("#list_seat").val(data[dota].seat)
-            $("#list_description").val(data[dota].description)
+
+            if ( data[dota].type == 1 ) {
+                $("#list").css("display","block");
+                $("#list_subject").val(data[dota].subject)
+                $("#list_departure_date").val(data[dota].departure_date)
+                $("#list_departure").val(data[dota].departure)
+                $("#list_destination").val(data[dota].destination)
+                $("#list_seat").val(data[dota].seat)
+                $("#list_description").val(data[dota].description)
+            } else if (data[dota].type == 2) {
+                $("#list_ptt").css("display","block");
+                $("#list_ptt_subject").val(data[dota].subject)
+                $("#list_ptt_departure_date").val(data[dota].departure_date)
+                $("#list_ptt_description").val(data[dota].description)
+            }
         }
     )
 }

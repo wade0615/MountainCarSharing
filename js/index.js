@@ -1,7 +1,7 @@
 // 使用者登入 api
-var send_login = "http://carsharing.rayoutstanding.space/api/login"
+var send_login = "https://carsharing.rayoutstanding.space/api/login"
 // 使用者註冊 api
-var send_sign_up = "http://carsharing.rayoutstanding.space/api/register"
+var send_sign_up = "https://carsharing.rayoutstanding.space/api/register"
 
 $(".bt-sign-up").click(
     function() {
@@ -35,10 +35,12 @@ $(".btn-login").click(
             }),
             success: function(json) {
                 // console.log(json);
-                console.log(json.data[0]);
-                document.cookie = `login_cookie = ${json.data[0].token}`;
+                console.log(json.data[0]);                
+                console.log(json.data[0].token);                
+                document.cookie = `login_cookie=${json.data[0].token}`;
                 cookie = document.cookie.split("=");
                 console.log(cookie[1]);
+                console.log(document.cookie);
                 window.location.href='./home_page.html'
             },
             error: function(err) { 
