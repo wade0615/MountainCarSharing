@@ -188,6 +188,8 @@ function more_imfor() {
                 $("#list_ptt").css("display","block");
                 $("#list_ptt_subject").val(data[dota].subject)
                 $("#list_ptt_departure_date").val(data[dota].departure_date)
+                var ptt_url = document.getElementById("list_ptt_url");
+                ptt_url.setAttribute("href",data[dota].ptt_url)
                 $("#list_ptt_description").val(data[dota].description)
             }
         }
