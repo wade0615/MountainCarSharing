@@ -15,11 +15,13 @@ var post = "https://carsharing.rayoutstanding.space/api/post"
 // get cookie
 cookie = document.cookie.split("=");
 
+var search_range = $("#search_range").val()
 
 // 一進畫面就先讀取一次第一筆資料
 $(document).ready(function(){
     console.log(cookie[1])
     console.log(cookie)
+    console.log(search_range)
     get_record();
 })
 
