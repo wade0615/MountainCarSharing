@@ -15,13 +15,13 @@ var post = "https://carsharing.rayoutstanding.space/api/post"
 // get cookie
 cookie = document.cookie.split("=");
 
-var search_range = $("#search_range").val()
+// var search_range = $("#search_range").val()
+// var search_departure = $("#search_departure").val()
 
 // 一進畫面就先讀取一次第一筆資料
 $(document).ready(function(){
     console.log(cookie[1])
     console.log(cookie)
-    console.log(search_range)
     get_record();
 })
 
@@ -77,8 +77,8 @@ $(".btn-search").click(
 $(".btn-warning").click(
     function() {
         $("#search").css("display","none");
-        $("ul").html("")
-        get_ptt_record()
+        $("ul").html("");
+        get_search_record()
     }
 )
 $(".btn-secondary").click(
@@ -90,9 +90,15 @@ $(".btn-secondary").click(
 )
 
 // 抓取 搜尋條件中的共乘資訊
-function get_ptt_record(){
+function get_search_record(){
+    var search_range = $("#search_range").val();
+    var search_departure = $("#search_departure").val();
+    var search_destination = $("#search_destination").val();
+    var search_date = $("#search_departure_date").val();
+    var search_url = `https://carsharing.rayoutstanding.space/api/post?departure_date=${search_date}&departure=${search_departure}&destination=${search_destination}&type=${search_range}&row=100`
+    console.log(search_url);
     $.ajax({
-    url: record_ptt,
+    url: search_url,
     type: 'GET',
     datatype: 'json',
     headers: {
