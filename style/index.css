@@ -1,21 +1,21 @@
 @charset "UTF-8";
-body {
+* {
+  outline: solid 1px white;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Nunito';
-  font-size: 0;
+}
+
+body {
   height: 100vh;
-  padding: 100px calc( (100% - 400px)/2);
+  padding: 100px 50px;
   background-color: #AEE7E8;
 }
 
-@media (max-width: 1024px) {
-  body {
-    padding: 50px 30px;
-  }
+.sign-up {
+  display: none;
 }
 
-.sign-up {
+.sign-in {
   display: none;
 }
 
@@ -117,5 +117,27 @@ figure {
   background-size: 60px auto;
   background-position: top center;
   background-repeat: no-repeat;
+}
+
+main {
+  font-size: 18px;
+}
+
+main section#login-card {
+  padding: 50px 10px;
+  background-color: #ccc;
+}
+
+main section #signIn h2 {
+  margin-bottom: 3rem;
+}
+
+main section #signIn input {
+  margin-bottom: 1.5rem;
+}
+
+main section #signUp {
+  display: none;
+  background-color: #eee;
 }
 /*# sourceMappingURL=index.css.map */

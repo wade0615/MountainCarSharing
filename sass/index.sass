@@ -5,22 +5,23 @@
 
 
 *
-    // outline: solid 1px white
+    outline: solid 1px white
+    box-sizing: border-box
 
 body
-    box-sizing: border-box
-    font-family: 'Nunito'
-    font-size: 0
+    // font-family: 'Nunito'
+    // font-size: 0
     height: 100vh
-    padding: 100px calc( (100% - 400px)/2 )
+    // padding: 100px calc( (100% - 400px)/2 )
+    padding: 100px 50px
     background-color: #AEE7E8
-    @include mediaquery-mobile
-        padding: 50px 30px
+    // @include mediaquery-mobile
+    //     padding: 50px 30px
 
 .sign-up
     display: none
 .sign-in
-    // display: none
+    display: none
 
 .card
     width: 400px
@@ -86,3 +87,19 @@ figure
     background-position: top center
     background-repeat: no-repeat
 
+
+main
+    font-size: 18px
+    section#login-card
+        padding: 50px 10px
+        background-color: #ccc
+    section #signIn
+        // background-color: #ddd
+        h2
+            margin-bottom: 3rem
+        input
+            margin-bottom: 1.5rem
+    section #signUp
+        display: none
+        background-color: #eee
+        
