@@ -1,13 +1,11 @@
 @charset "UTF-8";
 * {
-  outline: solid 1px white;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
 body {
-  height: 100vh;
-  padding: 100px 50px;
+  padding: 60px 50px;
   background-color: #AEE7E8;
 }
 
@@ -123,13 +121,37 @@ main {
   font-size: 18px;
 }
 
+main section#login-intro {
+  padding: 15px;
+  background-color: #ddd;
+}
+
+main section#login-intro p {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  main section#login-intro p {
+    display: block;
+  }
+}
+
 main section#login-card {
   padding: 50px 10px;
   background-color: #ccc;
 }
 
+main section #signIn {
+  margin-bottom: 20px;
+}
+
 main section #signIn h2 {
+  display: inline;
   margin-bottom: 3rem;
+}
+
+main section #signIn h2 button {
+  color: #A7B4C6;
 }
 
 main section #signIn input {
@@ -139,5 +161,11 @@ main section #signIn input {
 main section #signUp {
   display: none;
   background-color: #eee;
+}
+
+@media (min-width: 576px) {
+  main #mobileIntro {
+    display: none;
+  }
 }
 /*# sourceMappingURL=index.css.map */

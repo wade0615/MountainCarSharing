@@ -3,17 +3,24 @@
     @media (max-width: 1024px)
         @content
 
+@mixin rwd-sm
+    @media (min-width: 576px)
+        @content
+
+@mixin rwd-md
+    @media (min-width: 768px)
+        @content
 
 *
-    outline: solid 1px white
+    // outline: solid 1px white
     box-sizing: border-box
 
 body
     // font-family: 'Nunito'
     // font-size: 0
-    height: 100vh
+    // height: 100vh
     // padding: 100px calc( (100% - 400px)/2 )
-    padding: 100px 50px
+    padding: 60px 50px
     background-color: #AEE7E8
     // @include mediaquery-mobile
     //     padding: 50px 30px
@@ -90,16 +97,29 @@ figure
 
 main
     font-size: 18px
+    section#login-intro
+        padding: 15px
+        background-color: #ddd
+        p
+            display: none
+            @include rwd-sm
+                display: block
     section#login-card
         padding: 50px 10px
         background-color: #ccc
     section #signIn
-        // background-color: #ddd
+        margin-bottom: 20px
         h2
+            display: inline
             margin-bottom: 3rem
+            button
+                color: #A7B4C6
         input
             margin-bottom: 1.5rem
     section #signUp
         display: none
         background-color: #eee
-        
+    #mobileIntro
+        @include rwd-sm
+            display: none
+
