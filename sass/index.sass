@@ -11,6 +11,10 @@
     @media (min-width: 768px)
         @content
 
+@mixin rwd-lg
+    @media (min-width: 992px)
+        @content
+
 *
     // outline: solid 1px white
     box-sizing: border-box
@@ -27,6 +31,8 @@ body
     background: linear-gradient(rgb(107, 107, 107), rgb(70, 70, 70))
     // @include mediaquery-mobile
     //     padding: 50px 30px
+    @include rwd-lg
+        height: 100vh
 
 .sign-up
     display: none
@@ -99,6 +105,14 @@ figure
 
 
 main
+    @include rwd-lg
+        height: 500px
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        margin: auto
     section#login-intro
         color: #eee
         padding: 1rem

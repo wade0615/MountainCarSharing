@@ -11,6 +11,12 @@ body {
   background: linear-gradient(#6b6b6b, #464646);
 }
 
+@media (min-width: 992px) {
+  body {
+    height: 100vh;
+  }
+}
+
 .sign-up {
   display: none;
 }
@@ -117,6 +123,18 @@ figure {
   background-size: 60px auto;
   background-position: top center;
   background-repeat: no-repeat;
+}
+
+@media (min-width: 992px) {
+  main {
+    height: 500px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
 }
 
 main section#login-intro {
