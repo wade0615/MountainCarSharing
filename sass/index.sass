@@ -15,9 +15,11 @@
     // outline: solid 1px white
     box-sizing: border-box
 
+html
+    // font-size: 18px
 body
-    // font-family: 'Nunito'
-    // font-size: 0
+    font-family: "Lobster", "Noto Sans TC", sans-serif,  cursive
+    // font-size: 18px
     // height: 100vh
     // padding: 100px calc( (100% - 400px)/2 )
     padding: 60px 50px
@@ -96,30 +98,51 @@ figure
 
 
 main
-    font-size: 18px
     section#login-intro
-        padding: 15px
+        padding: 1rem
         background-color: #ddd
+        @include rwd-md
+            padding: 2.5rem 2rem
         p
             display: none
             @include rwd-sm
                 display: block
     section#login-card
-        padding: 50px 10px
+        padding: 2rem 0.8rem
         background-color: #ccc
+        @include rwd-md
+            padding: 2.5rem 2rem
     section #signIn
-        margin-bottom: 20px
+        margin-bottom: 1rem
         h2
-            display: inline
-            margin-bottom: 3rem
+            margin-bottom: 1.5rem
+            @include rwd-sm
+                margin-bottom: 3rem
             button
                 color: #A7B4C6
         input
+            display: block
+            width: 100%
+            padding: 0.3rem 0.7rem
             margin-bottom: 1.5rem
+            font-size: 1rem
+            border: solid transparent
+            border-bottom: solid 1px black
+            background-color: transparent
+        .btn-signIn
+            width: 6rem
+            border-radius: 3rem
+            font-size: 1rem
+            background-color: #ddd
+            @include rwd-md
+                width: 8rem
+
     section #signUp
         display: none
         background-color: #eee
-    #mobileIntro
+    #intro
+        padding: 1rem
+        background-color: #ddd
         @include rwd-sm
             display: none
 
