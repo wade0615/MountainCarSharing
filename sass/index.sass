@@ -23,7 +23,8 @@ body
     // height: 100vh
     // padding: 100px calc( (100% - 400px)/2 )
     padding: 60px 50px
-    background-color: #AEE7E8
+    // background-color: #AEE7E8
+    background: linear-gradient(rgb(107, 107, 107), rgb(70, 70, 70))
     // @include mediaquery-mobile
     //     padding: 50px 30px
 
@@ -99,8 +100,12 @@ figure
 
 main
     section#login-intro
+        color: #eee
         padding: 1rem
-        background-color: #ddd
+        background: linear-gradient(rgb(98, 194, 134), rgb(76, 155, 106))
+        border-radius: .5rem .5rem 0 0
+        @include rwd-sm
+            border-radius: .5rem 0 0 .5rem
         @include rwd-md
             padding: 2.5rem 2rem
         p
@@ -109,7 +114,9 @@ main
                 display: block
     section#login-card
         padding: 2rem 0.8rem
-        background-color: #ccc
+        background: linear-gradient(rgb(61, 87, 122), rgb(55, 80, 112))
+        @include rwd-sm
+            border-radius: 0 .5rem .5rem 0
         @include rwd-md
             padding: 2.5rem 2rem
     section #signIn
@@ -119,7 +126,7 @@ main
             @include rwd-sm
                 margin-bottom: 3rem
             button
-                color: #A7B4C6
+                color: #fff
         input
             display: block
             width: 100%
@@ -127,13 +134,13 @@ main
             margin-bottom: 1.5rem
             font-size: 1rem
             border: solid transparent
-            border-bottom: solid 1px black
+            border-bottom: solid 1px #eee
             background-color: transparent
         .btn-signIn
             width: 6rem
             border-radius: 3rem
             font-size: 1rem
-            background-color: #ddd
+            background-color: rgb(98, 194, 134)
             @include rwd-md
                 width: 8rem
 
@@ -142,7 +149,9 @@ main
         background-color: #eee
     #intro
         padding: 1rem
-        background-color: #ddd
+        color: #ddd
+        background: linear-gradient(rgb(55, 80, 112), rgb(49, 69, 95))
+        border-radius: 0 0 .5rem .5rem
         @include rwd-sm
             display: none
 

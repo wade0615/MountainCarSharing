@@ -7,7 +7,8 @@
 body {
   font-family: "Lobster", "Noto Sans TC", sans-serif,  cursive;
   padding: 60px 50px;
-  background-color: #AEE7E8;
+  background: -webkit-gradient(linear, left top, left bottom, from(#6b6b6b), to(#464646));
+  background: linear-gradient(#6b6b6b, #464646);
 }
 
 .sign-up {
@@ -119,8 +120,17 @@ figure {
 }
 
 main section#login-intro {
+  color: #eee;
   padding: 1rem;
-  background-color: #ddd;
+  background: -webkit-gradient(linear, left top, left bottom, from(#62c286), to(#4c9b6a));
+  background: linear-gradient(#62c286, #4c9b6a);
+  border-radius: .5rem .5rem 0 0;
+}
+
+@media (min-width: 576px) {
+  main section#login-intro {
+    border-radius: .5rem 0 0 .5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -141,7 +151,14 @@ main section#login-intro p {
 
 main section#login-card {
   padding: 2rem 0.8rem;
-  background-color: #ccc;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3d577a), to(#375070));
+  background: linear-gradient(#3d577a, #375070);
+}
+
+@media (min-width: 576px) {
+  main section#login-card {
+    border-radius: 0 .5rem .5rem 0;
+  }
 }
 
 @media (min-width: 768px) {
@@ -165,7 +182,7 @@ main section #signIn h2 {
 }
 
 main section #signIn h2 button {
-  color: #A7B4C6;
+  color: #fff;
 }
 
 main section #signIn input {
@@ -175,7 +192,7 @@ main section #signIn input {
   margin-bottom: 1.5rem;
   font-size: 1rem;
   border: solid transparent;
-  border-bottom: solid 1px black;
+  border-bottom: solid 1px #eee;
   background-color: transparent;
 }
 
@@ -183,7 +200,7 @@ main section #signIn .btn-signIn {
   width: 6rem;
   border-radius: 3rem;
   font-size: 1rem;
-  background-color: #ddd;
+  background-color: #62c286;
 }
 
 @media (min-width: 768px) {
@@ -199,7 +216,10 @@ main section #signUp {
 
 main #intro {
   padding: 1rem;
-  background-color: #ddd;
+  color: #ddd;
+  background: -webkit-gradient(linear, left top, left bottom, from(#375070), to(#31455f));
+  background: linear-gradient(#375070, #31455f);
+  border-radius: 0 0 .5rem .5rem;
 }
 
 @media (min-width: 576px) {
