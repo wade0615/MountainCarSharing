@@ -3,19 +3,6 @@ var send_login = "https://carsharing.rayoutstanding.space/api/login"
 // 使用者註冊 api
 var send_sign_up = "https://carsharing.rayoutstanding.space/api/register"
 
-$(".bt-sign-up").click(
-    function() {
-        $(".sign-in").css("display","none");
-        $(".sign-up").css("display","block");
-    }
-)
-$(".bt-sign-in").click(
-    function() {
-        $(".sign-in").css("display","block");
-        $(".sign-up").css("display","none");
-    }
-)
-
 // 登入
 // $(".btn-login").click(
 //     function() {
@@ -87,18 +74,20 @@ $(".bt-sign-in").click(
 
 //////////////要翻新囉
 
-$("#goSignUp").click(
-    function() {
-        $("#signIn").css("display","none");
-        $("#signUp").css("display","block");
-    }
-)
-$("#goSignIn").click(
-    function() {
-        $("#signIn").css("display","block");
-        $("#signUp").css("display","none");
-    }
-)
+const goSignUp = document.querySelector("#goSignUp");
+const goSignIn = document.querySelector("#goSignIn");
+const signIn = document.querySelector("#signIn");
+const signUp = document.querySelector("#signUp");
+
+goSignUp.addEventListener('click', () => {
+    signIn.style = 'display: none'
+    signUp.style = 'display: block'
+})
+
+goSignIn.addEventListener('click', () => {
+    signIn.style = 'display: block'
+    signUp.style = 'display: none'
+})
 
 // 登入
 $(".btn-signIn").click(
