@@ -137,6 +137,13 @@ figure {
   }
 }
 
+@media (min-width: 576px) {
+  main section {
+    -webkit-box-shadow: 0 15px 30px #222222;
+            box-shadow: 0 15px 30px #222222;
+  }
+}
+
 main section#login-intro {
   color: #fff;
   padding: 1rem;
