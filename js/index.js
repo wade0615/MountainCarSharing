@@ -90,30 +90,65 @@ goSignIn.addEventListener('click', () => {
 })
 
 // 登入
-$(".btn-signIn").click(
-    function() {
-        $(this).html("Loading...")
-        $.ajax({
-            url: send_login,
-            type: 'POST',
-            headers: {
-                Accept: "application/json; charset=utf-8",
-                "Content-Type": "application/json; charset=utf-8",
-            },
-            data: JSON.stringify({
-                email: $("#signIn_account").val(),
-                password: $("#signIn_pw").val()
-            }),
-            success: function(json) {             
-                document.cookie = `login_cookie=${json.data[0].token}`;
+// $(".btn-signIn").click(
+//     function() {
+//         $(this).html("Loading...")
+//         $.ajax({
+//             url: send_login,
+//             type: 'POST',
+//             headers: {
+//                 Accept: "application/json; charset=utf-8",
+//                 "Content-Type": "application/json; charset=utf-8",
+//             },
+//             data: JSON.stringify({
+//                 email: $("#signIn_account").val(),
+//                 password: $("#signIn_pw").val()
+//             }),
+//             success: function(json) {
+//                 console.log(json);
+//                 document.cookie = `login_cookie=${json.data[0].token}`;
+//                 cookie = document.cookie.split("=");
+//                 // window.location.href='./home_page.html'
+//             },
+//             error: function(err) { 
+//                 console.log(err);
+//                 alert("帳號或密碼有誤...請再試一次");
+//                 $(".btn-login").html("LOG IN AGAIN")
+//             },
+//             });
+//     }
+// )
+
+const btnSignIn = document.querySelector(".btn-signIn");
+const btnSignUp = document.querySelector(".btn-signUp");
+const signInAccount = document.querySelector("#signIn_account");
+const signInPassword = document.querySelector("#signIn_pw");
+
+btnSignIn.addEventListener('click', () => {
+    btnSignIn.innerHTML = 'Loading...'
+    fetch(send_login, {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+            Accept: "application/json; charset=utf-8", "Content-Type": "application/json; charset=utf-8"
+        },
+        body: JSON.stringify({
+                email: signInAccount.value,
+                password: signInPassword.value
+            }) 
+        })
+        .then(response => {
+            response = Promise.resolve(response.json());
+            response.then(result => {
+                document.cookie = `login_cookie=${result.data[0].token}`;
                 cookie = document.cookie.split("=");
+                console.log(cookie);
                 window.location.href='./home_page.html'
-            },
-            error: function(err) { 
-                console.log(err);
-                alert("帳號或密碼有誤...請再試一次");
-                $(".btn-login").html("LOG IN AGAIN")
-            },
-            });
-    }
-)
+            })
+        })
+        .catch(err => {
+            console.log(err);
+            alert("帳號或密碼有誤...請再試一次");
+            btnSignIn.innerHTML = 'Try it again.'
+        })
+})
