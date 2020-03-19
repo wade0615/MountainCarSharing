@@ -24,14 +24,14 @@ html
 body
     font-family: "Lobster", "Noto Sans TC", sans-serif,  cursive
     // font-size: 18px
-    // height: 100vh
+    // height: 100vhs
     // padding: 100px calc( (100% - 400px)/2 )
     padding: 60px 50px
     // background-color: #AEE7E8
-    background: linear-gradient(rgb(107, 107, 107), rgb(70, 70, 70))
+    background: linear-gradient(rgb(117, 117, 117), rgb(70, 70, 70))
     // @include mediaquery-mobile
     //     padding: 50px 30px
-    @include rwd-lg
+    @include rwd-sm
         height: 100vh
 
 .sign-up
@@ -114,7 +114,7 @@ main
         right: 0
         margin: auto
     section#login-intro
-        color: #eee
+        color: #fff
         padding: 1rem
         background: linear-gradient(rgb(98, 194, 134), rgb(76, 155, 106))
         border-radius: .5rem .5rem 0 0
@@ -123,6 +123,7 @@ main
         @include rwd-md
             padding: 2.5rem 2rem
         p
+            color: #ddd
             display: none
             @include rwd-sm
                 display: block
@@ -133,14 +134,23 @@ main
             border-radius: 0 .5rem .5rem 0
         @include rwd-md
             padding: 2.5rem 2rem
-    section #signIn
+    section #signIn,#signUp
         margin-bottom: 1rem
         h2
             margin-bottom: 1.5rem
+            color: #ccc
             @include rwd-sm
                 margin-bottom: 3rem
-            button
+            span
                 color: #fff
+                margin-right: 1rem
+                border-bottom: solid 2px rgb(98, 194, 134)
+                @include rwd-lg
+                    margin-right: 3rem
+            button
+                color: #ccc
+                border: solid transparent
+                background-color: transparent
         input
             display: block
             width: 100%
@@ -150,17 +160,23 @@ main
             border: solid transparent
             border-bottom: solid 1px #eee
             background-color: transparent
-        .btn-signIn
+        input:focus
+            outline: none
+        .btn-signIn,.btn-signUp
             width: 6rem
             border-radius: 3rem
-            font-size: 1rem
+            font-size: 1.2rem
             background-color: rgb(98, 194, 134)
             @include rwd-md
                 width: 8rem
 
     section #signUp
         display: none
-        background-color: #eee
+        span
+            color: #fff
+            margin-left: 1rem
+            @include rwd-lg
+                margin-left: 3rem
     #intro
         padding: 1rem
         color: #ddd

@@ -84,3 +84,18 @@ $(".btn-register").click(
             });
     }
 )
+
+//////////////要翻新囉
+
+$("#goSignUp").click(
+    function() {
+        $("#signIn").css("display","none");
+        $("#signUp").css("display","block");
+    }
+)
+$("#goSignIn").click(
+    function() {
+        $("#signIn").css("display","block");
+        $("#signUp").css("display","none");
+    }
+)
