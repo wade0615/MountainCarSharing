@@ -129,7 +129,7 @@ main
                 display: block
     section#login-card
         padding: 2rem 0.8rem
-        background: linear-gradient(rgb(61, 87, 122), rgb(55, 80, 112))
+        background: linear-gradient(rgb(74, 105, 146), rgb(61, 89, 124))
         @include rwd-sm
             border-radius: 0 .5rem .5rem 0
         @include rwd-md
@@ -164,6 +164,12 @@ main
             background-color: transparent
         input:focus
             outline: none
+        input::-webkit-input-placeholder
+            color: #ddd
+        input::-moz-placeholder
+            color: #ddd
+        input:-ms-input-placeholder
+            color: #ddd
         .btn-signIn,.btn-signUp
             padding: .5px 1.5rem
             border-radius: 3rem
@@ -182,7 +188,7 @@ main
     #intro
         padding: 1rem
         color: #ddd
-        background: linear-gradient(rgb(55, 80, 112), rgb(49, 69, 95))
+        background: linear-gradient(rgb(61, 89, 124), rgb(49, 69, 95))
         border-radius: 0 0 .5rem .5rem
         @include rwd-sm
             display: none

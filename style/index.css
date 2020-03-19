@@ -170,8 +170,8 @@ main section#login-intro p {
 
 main section#login-card {
   padding: 2rem 0.8rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#3d577a), to(#375070));
-  background: linear-gradient(#3d577a, #375070);
+  background: -webkit-gradient(linear, left top, left bottom, from(#4a6992), to(#3d597c));
+  background: linear-gradient(#4a6992, #3d597c);
 }
 
 @media (min-width: 576px) {
@@ -236,6 +236,18 @@ main section #signIn input:focus, main #signUp input:focus {
   outline: none;
 }
 
+main section #signIn input::-webkit-input-placeholder, main #signUp input::-webkit-input-placeholder {
+  color: #ddd;
+}
+
+main section #signIn input::-moz-placeholder, main #signUp input::-moz-placeholder {
+  color: #ddd;
+}
+
+main section #signIn input:-ms-input-placeholder, main #signUp input:-ms-input-placeholder {
+  color: #ddd;
+}
+
 main section #signIn .btn-signIn, main section #signIn .btn-signUp, main #signUp .btn-signIn, main #signUp .btn-signUp {
   padding: .5px 1.5rem;
   border-radius: 3rem;
@@ -267,8 +279,8 @@ main section #signUp span {
 main #intro {
   padding: 1rem;
   color: #ddd;
-  background: -webkit-gradient(linear, left top, left bottom, from(#375070), to(#31455f));
-  background: linear-gradient(#375070, #31455f);
+  background: -webkit-gradient(linear, left top, left bottom, from(#3d597c), to(#31455f));
+  background: linear-gradient(#3d597c, #31455f);
   border-radius: 0 0 .5rem .5rem;
 }
 

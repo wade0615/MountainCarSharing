@@ -103,7 +103,7 @@ $("#goSignIn").click(
 // 登入
 $(".btn-signIn").click(
     function() {
-        $(this).html("LOADING...")
+        $(this).html("Loading...")
         $.ajax({
             url: send_login,
             type: 'POST',
