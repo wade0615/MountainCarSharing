@@ -225,6 +225,8 @@ main section #signIn input, main #signUp input {
   padding: 0.3rem 0.7rem;
   margin-bottom: 1.5rem;
   font-size: 1rem;
+  font-family: sans-serif;
+  color: #fff;
   border: solid transparent;
   border-bottom: solid 1px #eee;
   background-color: transparent;
@@ -235,7 +237,7 @@ main section #signIn input:focus, main #signUp input:focus {
 }
 
 main section #signIn .btn-signIn, main section #signIn .btn-signUp, main #signUp .btn-signIn, main #signUp .btn-signUp {
-  width: 6rem;
+  padding: .5px 1.5rem;
   border-radius: 3rem;
   font-size: 1.2rem;
   background-color: #62c286;
