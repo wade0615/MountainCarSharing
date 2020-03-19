@@ -214,6 +214,7 @@ main section #signIn h2 span, main #signUp h2 span {
 }
 
 main section #signIn h2 button, main #signUp h2 button {
+  cursor: pointer;
   color: #ccc;
   border: solid transparent;
   background-color: transparent;
@@ -249,6 +250,7 @@ main section #signIn input:-ms-input-placeholder, main #signUp input:-ms-input-p
 }
 
 main section #signIn .btn-signIn, main section #signIn .btn-signUp, main #signUp .btn-signIn, main #signUp .btn-signUp {
+  cursor: pointer;
   padding: .5px 1.5rem;
   border-radius: 3rem;
   font-size: 1.2rem;
