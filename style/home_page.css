@@ -1,3 +1,7 @@
+* {
+  outline: solid 1px black;
+}
+
 body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -71,10 +75,6 @@ main li {
   margin-top: 15px;
 }
 
-main li span {
-  margin-right: 10px;
-}
-
 main li .local_data {
   color: #ffbb00;
 }
@@ -82,10 +82,6 @@ main li .local_data {
 main li .ptt_data {
   color: #00ff04;
   font-weight: bold;
-}
-
-main li p, main li a {
-  display: inline;
 }
 
 @media (max-width: 1024px) {

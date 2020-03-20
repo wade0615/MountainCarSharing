@@ -51,7 +51,7 @@ function get_record(){
     },
     error: function(err) { 
         console.log(err);
-        alert('Failed!'); 
+        // alert('Failed!'); 
     },
     });
 }
@@ -117,7 +117,7 @@ function get_search_record(){
     },
     error: function(err) { 
         console.log(err);
-        alert('Failed!'); 
+        // alert('Failed!'); 
     },
     });
 }
