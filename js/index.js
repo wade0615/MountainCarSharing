@@ -79,15 +79,18 @@ const goSignIn = document.querySelector("#goSignIn");
 const signIn = document.querySelector("#signIn");
 const signUp = document.querySelector("#signUp");
 
-goSignUp.addEventListener('click', () => {
+goSignUp.addEventListener('click', signUpPage)
+
+goSignIn.addEventListener('click', signInPage)
+
+function signUpPage(){
     signIn.style = 'display: none'
     signUp.style = 'display: block'
-})
-
-goSignIn.addEventListener('click', () => {
+}
+function signInPage(){
     signIn.style = 'display: block'
     signUp.style = 'display: none'
-})
+}
 
 // 登入
 // $(".btn-signIn").click(
@@ -121,8 +124,13 @@ goSignIn.addEventListener('click', () => {
 
 const btnSignIn = document.querySelector(".btn-signIn");
 const btnSignUp = document.querySelector(".btn-signUp");
+
 const signInAccount = document.querySelector("#signIn_account");
 const signInPassword = document.querySelector("#signIn_pw");
+
+const signUpAccount = document.querySelector("#signUp_account");
+const signUpPassword = document.querySelector("#signUp_pw");
+const signUpPasswordConfirm = document.querySelector("#signUp_pwConfirm");
 
 btnSignIn.addEventListener('click', () => {
     btnSignIn.innerHTML = 'Loading...'
@@ -150,5 +158,31 @@ btnSignIn.addEventListener('click', () => {
             console.log(err);
             alert("帳號或密碼有誤...請再試一次");
             btnSignIn.innerHTML = 'Try it again.'
+        })
+})
+
+btnSignUp.addEventListener('click', () => {
+    btnSignUp.innerHTML = 'Wait for a moment...'
+    fetch(send_sign_up, {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+            Accept: "application/json; charset=utf-8", "Content-Type": "application/json; charset=utf-8"
+        },
+        body: JSON.stringify({
+                email: signUpAccount.value,
+                password: signUpPassword.value,
+                password_confirmation: signUpPasswordConfirm.value
+            }) 
+        })
+        .then(response => {
+            alert("成功註冊");
+            signInPage()
+        })
+        .catch(err => {
+            console.log(err);
+            alert("規格錯囉");
+            btnSignUp.innerHTML = 'Sign Up'
+            signInPage();
         })
 })

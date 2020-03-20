@@ -264,12 +264,6 @@ main section #signIn .btn-signIn, main section #signIn .btn-signUp, main #signUp
   background-color: #62c286;
 }
 
-@media (min-width: 768px) {
-  main section #signIn .btn-signIn, main section #signIn .btn-signUp, main #signUp .btn-signIn, main #signUp .btn-signUp {
-    width: 8rem;
-  }
-}
-
 main section #signUp {
   display: none;
 }
