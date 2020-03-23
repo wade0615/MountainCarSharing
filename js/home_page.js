@@ -18,41 +18,16 @@ let cookie = document.cookie.split("=");
 // var search_departure = $("#search_departure").val()
 
 // 一進畫面就先讀取一次第一筆資料
-$(document).ready(function(){
+mainFunction();
+function mainFunction(){
     console.log(cookie[1])
     // console.log(cookie)
     getAllRecord();
-})
-
+    // more_imfor()
+}
 
 // 抓取 所有共乘資訊
 function getAllRecord(){
-    // $.ajax({
-    // url: allRecordURL,
-    // type: 'GET',
-    // datatype: 'json',
-    // headers: {
-    //     Authorization:`Bearer ${cookie[1]}`,
-    //     Accept: "application/json; charset=utf-8",
-    //     "Content-Type": "application/json; charset=utf-8",
-    // },
-    // beforeSend: function(){
-    //     console.log(this)
-    // },
-    // success: function(json) { 
-    //     // alert("Success");
-    //     // console.log(json);
-    //     data = json["data"];
-    //     type = data[0].type;
-    //     // console.log(type);
-    //     console.log("我要列出所有資料啦");
-    //     recordlist();
-    // },
-    // error: function(err) { 
-    //     console.log(err);
-    //     // alert('Failed!'); 
-    // },
-    // });
     fetch(allRecordURL, {
         method: 'GET',
         mode: 'cors',
@@ -63,11 +38,11 @@ function getAllRecord(){
         .then(response => {
             response = Promise.resolve(response.json());
             response.then(result => {
-                data = result.data;
-                type = data.type;
+                const callbackRecords = result.data;
+                type = callbackRecords.type;
                 // console.log(data);
                 // console.log("我要列出所有資料啦");
-                recordlist();
+                recordlist(callbackRecords);
             });
         })
         .catch(err => {
@@ -206,61 +181,64 @@ $(".btn-info").click(
 )
 
 // 顯示共乘資訊
-function recordlist() {
-    console.log("陣列出共乘資訊");
-    data.forEach(
-        function (array, index) {
-            // console.log(index)
-            // console.log(array)
-            if ( array["type"] == 1 ) {
-                $("ul").append(
-                    `<li value="${index}">
-                        <span class="local_data">[站內]</span>
-                        <p>${array["subject"]}</p>
-                    </li>`
-                )
-            } else if (array["type"] == 2) {
-                $("ul").append(
-                    `<li value="${index}">
-                        <span class="ptt_data">[PTT]</span>
-                        <p>${array["subject"]}</p>
-                    </li>`
-                )
-            }
+function recordlist(callbackRecords) {
+    console.log("陣列出共乘資訊", callbackRecords);
+    callbackRecords.forEach((callbackRecord, index) => {
+        let ul = document.querySelector('ul');
+        let li = document.createElement('li');
+
+        if ( callbackRecord.type === 1 ) {
+            ul.appendChild(li);
+            li.setAttribute('value', `${index}`)
+            li.innerHTML = `<span class="local_data">[站內]</span><p>${callbackRecord.subject}</p>`;
+        } else if (callbackRecord.type === 2) {
+            ul.appendChild(li);
+            li.setAttribute('value', `${index}`)
+            li.innerHTML = `<span class="ptt_data">[PTT]</span><p>${callbackRecord.subject}</p>`;
+        }
         }
     )
-    more_imfor()
+    more_imfor(callbackRecords);
 }
 
 // 列出詳細資訊
-function more_imfor() {
-    $("li").click(
-        function (array) {
-            // console.log($(this).val());
-            // dota = $(this).val() - 1;
-            dota = $(this).val();
-            // console.log(dota);
-            console.log(data[dota].type);
-            // console.log(data[$(this).val()].subject);
+const list = document.querySelector('#list');
+const list_subject = document.querySelector('#list_subject');
+const list_departure_date = document.querySelector('#list_departure_date');
+const list_departure = document.querySelector('#list_departure');
+const list_destination = document.querySelector('#list_destination');
+const list_seat = document.querySelector('#list_seat');
+const list_description = document.querySelector('#list_description');
 
-            if ( data[dota].type == 1 ) {
-                $("#list").css("display","block");
-                $("#list_subject").val(data[dota].subject)
-                $("#list_departure_date").val(data[dota].departure_date)
-                $("#list_departure").val(data[dota].departure)
-                $("#list_destination").val(data[dota].destination)
-                $("#list_seat").val(data[dota].seat)
-                $("#list_description").val(data[dota].description)
-            } else if (data[dota].type == 2) {
-                $("#list_ptt").css("display","block");
-                $("#list_ptt_subject").val(data[dota].subject)
-                $("#list_ptt_departure_date").val(data[dota].departure_date)
-                var ptt_url = document.getElementById("list_ptt_url");
-                ptt_url.setAttribute("href",data[dota].ptt_url)
-                $("#list_ptt_description").val(data[dota].description)
-            }
+const list_ptt = document.querySelector('#list_ptt');
+const list_ptt_subject = document.querySelector('#list_ptt_subject');
+const list_ptt_departure_date = document.querySelector('#list_ptt_departure_date');
+const list_ptt_description = document.querySelector('#list_ptt_description');
+const pttUrl = document.querySelector("#list_ptt_url");
+
+function more_imfor(callbackRecords) {
+    let recordsList = document.querySelectorAll('li');
+
+    recordsList.forEach(e => e.addEventListener('click', function() {
+        let thisValue = $(this).val();
+        let thisRecord = callbackRecords[thisValue];
+
+        if ( thisRecord.type === 1 ) {
+            list.setAttribute("style", "display:block");
+            list_subject.setAttribute("value", thisRecord.subject);
+            list_departure_date.setAttribute("value", thisRecord.departure_date);
+            list_departure.setAttribute("value", thisRecord.departure);
+            list_destination.setAttribute("value", thisRecord.destination);
+            list_seat .setAttribute("value", thisRecord.seat);
+            list_description.setAttribute("value", thisRecord.description);
+        } else if (thisRecord.type === 2) {
+            list_ptt.setAttribute("style", "display:block");
+            list_ptt_subject.setAttribute("value", thisRecord.subject);
+            list_ptt_departure_date.setAttribute("value", thisRecord.departure_date);
+            pttUrl.setAttribute("href", thisRecord.ptt_url);
+            list_ptt_description.setAttribute("value", thisRecord.description);
         }
-    )
+    }))
 }
 // 清空新增欄位詳細資訊
 function clean_records() {
