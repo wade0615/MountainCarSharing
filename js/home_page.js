@@ -14,9 +14,6 @@ const post = "https://carsharing.rayoutstanding.space/api/post"
 // get cookie
 let cookie = document.cookie.split("=");
 
-// var search_range = $("#search_range").val()
-// var search_departure = $("#search_departure").val()
-
 // 一進畫面就先讀取一次第一筆資料
 mainFunction();
 function mainFunction(){
@@ -243,10 +240,10 @@ document.querySelector('.btn-warning').addEventListener('click', () => {
 
 // 清空新增欄位詳細資訊
 function clean_records() {
-    $("#add_subject").val("")
-    $("#add_departure_date").val("")
-    $("#add_departure").val("")
-    $("#add_destination").val("")
-    $("#add_seat").val("")
-    $("#add_description").val("")
+    add_subject.setAttribute("value", '');
+    add_departure_date.setAttribute("value", '');
+    add_departure.setAttribute("value", '');
+    add_destination.setAttribute("value", '');
+    add_seat.setAttribute("value", '');
+    add_description.setAttribute("value", '');
 }
