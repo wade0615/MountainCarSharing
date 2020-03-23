@@ -50,36 +50,40 @@ function getAllRecord(){
 };
 
 // 抓取 搜尋條件中的共乘資訊
+const searchRange = document.querySelector('#search_range');
+const searchDeparture = document.querySelector('#search_departure');
+const searchDestination = document.querySelector('#search_destination');
+const searchDate = document.querySelector('#search_departure_date');
+
 function get_search_record(){
-    var search_range = $("#search_range").val();
-    var search_departure = $("#search_departure").val();
-    var search_destination = $("#search_destination").val();
-    var search_date = $("#search_departure_date").val();
-    var search_url = `https://carsharing.rayoutstanding.space/api/post?departure_date=${search_date}&departure=${search_departure}&destination=${search_destination}&type=${search_range}&row=100`
+    let search_range = searchRange.value;
+    let search_departure = searchDeparture.value;
+    let search_destination = searchDestination.value;
+    let search_date = searchDate.value;
+    let search_url = `https://carsharing.rayoutstanding.space/api/post?departure_date=${search_date}&departure=${search_departure}&destination=${search_destination}&type=${search_range}&row=100`
+
     console.log(search_url);
-    $.ajax({
-    url: search_url,
-    type: 'GET',
-    datatype: 'json',
-    headers: {
-        Authorization:`Bearer ${cookie[1]}`,
-        Accept: "application/json; charset=utf-8",
-        "Content-Type": "application/json; charset=utf-8",
-    },
-    beforeSend: function(){
-        console.log(this)
-    },
-    success: function(json) { 
-        data = json["data"];
-        type = data[0].type;
-        console.log("我要列出ptt資料啦");
-        recordlist();
-    },
-    error: function(err) { 
-        console.log(err);
-        // alert('Failed!'); 
-    },
-    });
+    fetch(search_url, {
+        method: 'GET',
+        mode: 'cors',
+        headers: {
+            Authorization:`Bearer ${cookie[1]}`, 
+            Accept: "application/json; charset=utf-8", 
+            "Content-Type": "application/json; charset=utf-8"
+            }
+        })
+        .then(response => {
+            response = Promise.resolve(response.json());
+            response.then(result => {
+                const callbackRecords = result.data;
+                type = callbackRecords.type;
+                recordlist(callbackRecords);
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            alert('Failed!'); 
+        });
 };
 
 // 登出
