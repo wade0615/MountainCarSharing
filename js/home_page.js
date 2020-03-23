@@ -105,39 +105,45 @@ btnDanger.addEventListener('click', () => {
 });
 
 // 新增共乘資料
-$(".btn-info").click(
-    function() {
-        $.ajax({
-            url: post,
-            type: 'POST',
-            headers: {
-                Accept: "application/json; charset=utf-8",
-                "Content-Type": "application/json; charset=utf-8",
-                Authorization: `Bearer ${cookie[1]}`
+const btnInfo = document.querySelector('.btn-info');
+const add_subject = document.querySelector('#add_subject');
+const add_departure_date = document.querySelector('#add_departure_date');
+const add_departure = document.querySelector('#add_departure');
+const add_destination = document.querySelector('#add_destination');
+const add_description = document.querySelector('#add_description');
+const add_seat = document.querySelector('#add_seat');
+
+btnInfo.addEventListener('click', () => {
+    fetch(post, {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+            Authorization:`Bearer ${cookie[1]}`, 
+            Accept: "application/json; charset=utf-8", 
+            "Content-Type": "application/json; charset=utf-8"
             },
-            data: JSON.stringify({
-                subject: $("#add_subject").val(),
-                departure_date: $("#add_departure_date").val(),
-                departure: $("#add_departure").val(),
-                destination: $("#add_destination").val(),
-                description: $("#add_description").val(),
-                seat: $("#add_seat").val(),
-            }),
-            success: function() {
-                alert("新增成功");
-                $("#add").css("display","none");
-                $("#list").css("display","none");
-                $("ul").empty();
-                getAllRecord();
-                clean_records();
-            },
-            error: function(err) { 
-                console.log(err);
-                alert("新增失敗");
-            },
-            });
-    }
-);
+        body: JSON.stringify({
+            subject: add_subject.value,
+            departure_date: add_departure_date.value,
+            departure: add_departure.value,
+            destination: add_destination.value,
+            description: add_description.value,
+            seat: add_seat.value
+            }) 
+        })
+        .then(() => {
+            alert("新增成功");
+            add.setAttribute("style", "display:none");
+            list.setAttribute("style", "display:none");
+            ul.innerHTML = '';
+            getAllRecord();
+            clean_records();
+        })
+        .catch(err => {
+            console.log(err);
+            alert("新增失敗");
+        })
+});
 
 // 顯示共乘資訊
 const ul = document.querySelector('ul');
