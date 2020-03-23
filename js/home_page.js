@@ -21,9 +21,7 @@ let cookie = document.cookie.split("=");
 mainFunction();
 function mainFunction(){
     console.log(cookie[1])
-    // console.log(cookie)
     getAllRecord();
-    // moreImfor()
 }
 
 // 抓取 所有共乘資訊
@@ -148,10 +146,11 @@ $(".btn-info").click(
 );
 
 // 顯示共乘資訊
+const ul = document.querySelector('ul');
+
 function recordlist(callbackRecords) {
     console.log("陣列出共乘資訊", callbackRecords);
     callbackRecords.forEach((callbackRecord, index) => {
-        let ul = document.querySelector('ul');
         let li = document.createElement('li');
 
         if ( callbackRecord.type === 1 ) {
@@ -210,37 +209,33 @@ function moreImfor(callbackRecords) {
 
 
 // 點擊按鈕開始新增共乘
-$(".btn-add").click(
-    function() {
-        $("#add").css("display","block");        
-    }
+const add = document.querySelector('#add');
+const search = document.querySelector('#search');
+
+document.querySelector('.btn-add').addEventListener('click', () => {
+    add.setAttribute("style", "display:block")
+});
+
+// 取消返回主頁
+document.querySelectorAll('.btn-secondary').forEach(e => e.addEventListener('click', () => {
+    add.setAttribute("style", "display:none")
+    list.setAttribute("style", "display:none")
+    list_ptt.setAttribute("style", "display:none")
+    search.setAttribute("style", "display:none")
+    })
 )
-$(".btn-secondary").click(
-    function() {
-        $("#add").css("display","none");
-        $("#list").css("display","none");
-    }
-)
-// 點擊按鈕開始搜尋共乘
-$(".btn-search").click(
-    function() {
-        $("#search").css("display","block");        
-    }
-)
-$(".btn-warning").click(
-    function() {
-        $("#search").css("display","none");
-        $("ul").html("");
-        get_search_record()
-    }
-)
-$(".btn-secondary").click(
-    function() {
-        $("#search").css("display","none");
-        $("#list").css("display","none");
-        $("#list_ptt").css("display","none");
-    }
-)
+
+// 點擊按鈕進入 搜尋 頁面
+document.querySelector('.btn-search').addEventListener('click', () => {
+    search.setAttribute("style", "display:block");
+});
+
+// 一但開始 搜尋 先清空<ul>
+document.querySelector('.btn-warning').addEventListener('click', () => {
+    search.setAttribute("style", "display:none");
+    ul.innerHTML = '';
+    get_search_record()
+});
 
 // 清空新增欄位詳細資訊
 function clean_records() {
