@@ -1,19 +1,18 @@
 
 // 定義 所有共乘資訊 的url
-var record = "https://carsharing.rayoutstanding.space/api/post?row=100"
+const allRecordURL = "https://carsharing.rayoutstanding.space/api/post?row=100"
 
 // 定義 站內共乘資訊 的url
-var record_ptt = "https://carsharing.rayoutstanding.space/api/post?type=2&row=100"
-
+const record_ptt = "https://carsharing.rayoutstanding.space/api/post?type=2&row=100"
 
 // 定義 登出 的url
-var logout = "https://carsharing.rayoutstanding.space/api/logout"
+const logout = "https://carsharing.rayoutstanding.space/api/logout"
 
 // 定義 新增共乘 的url
-var post = "https://carsharing.rayoutstanding.space/api/post"
+const post = "https://carsharing.rayoutstanding.space/api/post"
 
 // get cookie
-cookie = document.cookie.split("=");
+let cookie = document.cookie.split("=");
 
 // var search_range = $("#search_range").val()
 // var search_departure = $("#search_departure").val()
@@ -21,39 +20,60 @@ cookie = document.cookie.split("=");
 // 一進畫面就先讀取一次第一筆資料
 $(document).ready(function(){
     console.log(cookie[1])
-    console.log(cookie)
-    get_record();
+    // console.log(cookie)
+    getAllRecord();
 })
 
 
 // 抓取 所有共乘資訊
-function get_record(){
-    $.ajax({
-    url: record,
-    type: 'GET',
-    datatype: 'json',
-    headers: {
-        Authorization:`Bearer ${cookie[1]}`,
-        Accept: "application/json; charset=utf-8",
-        "Content-Type": "application/json; charset=utf-8",
-    },
-    beforeSend: function(){
-        console.log(this)
-    },
-    success: function(json) { 
-        // alert("Success");
-        // console.log(json);
-        data = json["data"];
-        type = data[0].type;
-        // console.log(type);
-        console.log("我要列出所有資料啦");
-        recordlist();
-    },
-    error: function(err) { 
-        console.log(err);
-        // alert('Failed!'); 
-    },
-    });
+function getAllRecord(){
+    // $.ajax({
+    // url: allRecordURL,
+    // type: 'GET',
+    // datatype: 'json',
+    // headers: {
+    //     Authorization:`Bearer ${cookie[1]}`,
+    //     Accept: "application/json; charset=utf-8",
+    //     "Content-Type": "application/json; charset=utf-8",
+    // },
+    // beforeSend: function(){
+    //     console.log(this)
+    // },
+    // success: function(json) { 
+    //     // alert("Success");
+    //     // console.log(json);
+    //     data = json["data"];
+    //     type = data[0].type;
+    //     // console.log(type);
+    //     console.log("我要列出所有資料啦");
+    //     recordlist();
+    // },
+    // error: function(err) { 
+    //     console.log(err);
+    //     // alert('Failed!'); 
+    // },
+    // });
+    fetch(allRecordURL, {
+        method: 'GET',
+        mode: 'cors',
+        headers: {
+            Authorization:`Bearer ${cookie[1]}`, Accept: "application/json; charset=utf-8", "Content-Type": "application/json; charset=utf-8"
+            }
+        })
+        .then(response => {
+            response = Promise.resolve(response.json());
+            response.then(result => {
+                data = result.data;
+                type = data.type;
+                // console.log(data);
+                // console.log("我要列出所有資料啦");
+                recordlist();
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            alert('Failed!'); 
+        })
 }
 
 // 點擊按鈕開始新增共乘
@@ -174,7 +194,7 @@ $(".btn-info").click(
                 $("#add").css("display","none");
                 $("#list").css("display","none");
                 $("ul").empty();
-                get_record();
+                getAllRecord();
                 clean_records();
             },
             error: function(err) { 
