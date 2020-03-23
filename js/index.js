@@ -148,9 +148,9 @@ btnSignIn.addEventListener('click', () => {
         .then(response => {
             response = Promise.resolve(response.json());
             response.then(result => {
-                document.cookie = `login_cookie=${result.data[0].token}`;
-                cookie = document.cookie.split("=");
-                console.log(cookie);
+                document.cookie = `login_cookie = ${result.data[0].token}`;
+                // cookie = document.cookie.split("=");
+                // console.log(cookie);
                 window.location.href='./home_page.html'
             })
         })
