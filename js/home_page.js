@@ -23,7 +23,7 @@ function mainFunction(){
     console.log(cookie[1])
     // console.log(cookie)
     getAllRecord();
-    // more_imfor()
+    // moreImfor()
 }
 
 // 抓取 所有共乘資訊
@@ -49,40 +49,7 @@ function getAllRecord(){
             console.log(err);
             alert('Failed!'); 
         })
-}
-
-// 點擊按鈕開始新增共乘
-$(".btn-add").click(
-    function() {
-        $("#add").css("display","block");        
-    }
-)
-$(".btn-secondary").click(
-    function() {
-        $("#add").css("display","none");
-        $("#list").css("display","none");
-    }
-)
-// 點擊按鈕開始搜尋共乘
-$(".btn-search").click(
-    function() {
-        $("#search").css("display","block");        
-    }
-)
-$(".btn-warning").click(
-    function() {
-        $("#search").css("display","none");
-        $("ul").html("");
-        get_search_record()
-    }
-)
-$(".btn-secondary").click(
-    function() {
-        $("#search").css("display","none");
-        $("#list").css("display","none");
-        $("#list_ptt").css("display","none");
-    }
-)
+};
 
 // 抓取 搜尋條件中的共乘資訊
 function get_search_record(){
@@ -115,7 +82,7 @@ function get_search_record(){
         // alert('Failed!'); 
     },
     });
-}
+};
 
 // 登出
 $(".btn-danger").click(
@@ -143,7 +110,7 @@ $(".btn-danger").click(
             },
             });
     }
-)
+);
 
 // 新增共乘資料
 $(".btn-info").click(
@@ -178,7 +145,7 @@ $(".btn-info").click(
             },
             });
     }
-)
+);
 
 // 顯示共乘資訊
 function recordlist(callbackRecords) {
@@ -198,8 +165,8 @@ function recordlist(callbackRecords) {
         }
         }
     )
-    more_imfor(callbackRecords);
-}
+    moreImfor(callbackRecords);
+};
 
 // 列出詳細資訊
 const list = document.querySelector('#list');
@@ -216,7 +183,7 @@ const list_ptt_departure_date = document.querySelector('#list_ptt_departure_date
 const list_ptt_description = document.querySelector('#list_ptt_description');
 const pttUrl = document.querySelector("#list_ptt_url");
 
-function more_imfor(callbackRecords) {
+function moreImfor(callbackRecords) {
     let recordsList = document.querySelectorAll('li');
 
     recordsList.forEach(e => e.addEventListener('click', function() {
@@ -240,6 +207,41 @@ function more_imfor(callbackRecords) {
         }
     }))
 }
+
+
+// 點擊按鈕開始新增共乘
+$(".btn-add").click(
+    function() {
+        $("#add").css("display","block");        
+    }
+)
+$(".btn-secondary").click(
+    function() {
+        $("#add").css("display","none");
+        $("#list").css("display","none");
+    }
+)
+// 點擊按鈕開始搜尋共乘
+$(".btn-search").click(
+    function() {
+        $("#search").css("display","block");        
+    }
+)
+$(".btn-warning").click(
+    function() {
+        $("#search").css("display","none");
+        $("ul").html("");
+        get_search_record()
+    }
+)
+$(".btn-secondary").click(
+    function() {
+        $("#search").css("display","none");
+        $("#list").css("display","none");
+        $("#list_ptt").css("display","none");
+    }
+)
+
 // 清空新增欄位詳細資訊
 function clean_records() {
     $("#add_subject").val("")
