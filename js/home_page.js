@@ -83,32 +83,26 @@ function get_search_record(){
 };
 
 // 登出
-$(".btn-danger").click(
-    function() {
-        $.ajax({
-            url: logout,
-            type: 'POST',
-            headers: {
-                Accept: "application/json; charset=utf-8",
-                "Content-Type": "application/json; charset=utf-8",
-                Authorization: `Bearer ${cookie[1]}`
-            },
-            beforeSend: function(){
-                console.log(this)
-            },
-            success: function() {
-                // alert("登出成功");
-                window.location.href='./index.html'
-            },
-            error: function(err) { 
-                console.log(err);
-                console.log(cookie[1]);
-                alert("登出失敗");
-                window.location.href='./index.html'
-            },
-            });
-    }
-);
+const btnDanger = document.querySelector('.btn-danger');
+btnDanger.addEventListener('click', () => {
+    fetch(logout, {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+            Authorization:`Bearer ${cookie[1]}`, 
+            Accept: "application/json; charset=utf-8", 
+            "Content-Type": "application/json; charset=utf-8"
+            }
+        })
+        .then(() => {
+            window.location.href='./index.html'
+        })
+        .catch(err => {
+            console.log(err);
+            alert("登出失敗");
+            window.location.href='./index.html'
+        })
+});
 
 // 新增共乘資料
 $(".btn-info").click(
