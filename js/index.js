@@ -1,7 +1,7 @@
 // 使用者登入 api
-var send_login = "https://carsharing.rayoutstanding.space/api/login"
+const send_login = "https://carsharing.rayoutstanding.space/api/login"
 // 使用者註冊 api
-var send_sign_up = "https://carsharing.rayoutstanding.space/api/register"
+const send_sign_up = "https://carsharing.rayoutstanding.space/api/register"
 
 // 登入
 // $(".btn-login").click(
@@ -79,48 +79,18 @@ const goSignIn = document.querySelector("#goSignIn");
 const signIn = document.querySelector("#signIn");
 const signUp = document.querySelector("#signUp");
 
-goSignUp.addEventListener('click', signUpPage)
+goSignUp.addEventListener('click', signUpPage);
+goSignIn.addEventListener('click', signInPage);
 
-goSignIn.addEventListener('click', signInPage)
-
+// 換頁
 function signUpPage(){
     signIn.style = 'display: none'
     signUp.style = 'display: block'
-}
+};
 function signInPage(){
     signIn.style = 'display: block'
     signUp.style = 'display: none'
-}
-
-// 登入
-// $(".btn-signIn").click(
-//     function() {
-//         $(this).html("Loading...")
-//         $.ajax({
-//             url: send_login,
-//             type: 'POST',
-//             headers: {
-//                 Accept: "application/json; charset=utf-8",
-//                 "Content-Type": "application/json; charset=utf-8",
-//             },
-//             data: JSON.stringify({
-//                 email: $("#signIn_account").val(),
-//                 password: $("#signIn_pw").val()
-//             }),
-//             success: function(json) {
-//                 console.log(json);
-//                 document.cookie = `login_cookie=${json.data[0].token}`;
-//                 cookie = document.cookie.split("=");
-//                 // window.location.href='./home_page.html'
-//             },
-//             error: function(err) { 
-//                 console.log(err);
-//                 alert("帳號或密碼有誤...請再試一次");
-//                 $(".btn-login").html("LOG IN AGAIN")
-//             },
-//             });
-//     }
-// )
+};
 
 const btnSignIn = document.querySelector(".btn-signIn");
 const btnSignUp = document.querySelector(".btn-signUp");
@@ -132,6 +102,7 @@ const signUpAccount = document.querySelector("#signUp_account");
 const signUpPassword = document.querySelector("#signUp_pw");
 const signUpPasswordConfirm = document.querySelector("#signUp_pwConfirm");
 
+// 登入
 btnSignIn.addEventListener('click', () => {
     btnSignIn.innerHTML = 'Loading...'
     fetch(send_login, {
@@ -161,6 +132,7 @@ btnSignIn.addEventListener('click', () => {
         })
 })
 
+// 註冊
 btnSignUp.addEventListener('click', () => {
     btnSignUp.innerHTML = 'Wait for a moment...'
     fetch(send_sign_up, {
@@ -181,7 +153,7 @@ btnSignUp.addEventListener('click', () => {
         })
         .catch(err => {
             console.log(err);
-            alert("規格錯囉");
+            alert("輸入的格式錯囉！再試一次吧～");
             btnSignUp.innerHTML = 'Sign Up'
             signInPage();
         })
