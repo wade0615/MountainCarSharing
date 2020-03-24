@@ -3,6 +3,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: fixed;
+  width: 100vw;
   height: 100vh;
   padding: 40px 0;
   background: #141e2b;
@@ -20,21 +21,78 @@ header {
   font-size: 0;
 }
 
+@media (min-width: 992px) {
+  header {
+    max-width: 1440px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+}
+
 header > div {
   display: inline-block;
   width: calc( 100% - 80px);
 }
 
+@media (min-width: 768px) {
+  header > div {
+    width: calc( 100% - 120px);
+  }
+}
+
+@media (min-width: 992px) {
+  header > div {
+    width: calc( 100% - 160px);
+  }
+}
+
 header h1 {
   margin: 0;
-  padding: 0 0 0 1rem;
+  padding: .5rem 0 0 1rem;
   font-size: 2rem;
   color: white;
+}
+
+@media (min-width: 576px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  header h1 {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  header h1 {
+    padding: 30px;
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  header h1 {
+    font-size: 3.5rem;
+  }
 }
 
 header img {
   width: 80px;
   vertical-align: top;
+}
+
+@media (min-width: 768px) {
+  header img {
+    width: 120px;
+  }
+}
+
+@media (min-width: 992px) {
+  header img {
+    width: 160px;
+  }
 }
 
 header nav {
@@ -50,10 +108,30 @@ header nav {
   transition: all 0.7s ease;
 }
 
+@media (min-width: 576px) {
+  header nav {
+    position: relative;
+    width: initial;
+    height: initial;
+    right: 0;
+    padding: 0;
+    color: white;
+    text-align: end;
+    background-color: transparent;
+  }
+}
+
 header nav #nav-addRecord, header nav #nav-searchRecords, header nav #logout {
   padding: 0 0 0 15px;
   margin: 0 0 1.5rem 0;
   border-bottom: solid 1px black;
+}
+
+@media (min-width: 576px) {
+  header nav #nav-addRecord, header nav #nav-searchRecords, header nav #logout {
+    display: inline;
+    border-bottom: none;
+  }
 }
 
 header nav .aside {
@@ -65,6 +143,12 @@ header nav .aside {
   border-radius: 50% 0 0 50%;
   background-color: #eee;
   background-image: url(../pic/arrow.png);
+}
+
+@media (min-width: 576px) {
+  header nav .aside {
+    display: none;
+  }
 }
 
 header nav.active {
@@ -123,7 +207,7 @@ section#lists ul {
   padding: 0;
   font-size: 30px;
   list-style-type: none;
-  height: 90vh;
+  height: 80vh;
   overflow: scroll;
   background: -webkit-gradient(linear, left top, left bottom, from(#31455f), to(#44638a));
   background: linear-gradient(#31455f, #44638a);

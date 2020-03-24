@@ -15,6 +15,10 @@
     @media (min-width: 992px)
         @content
 
+@mixin rwd-xl
+    @media (min-width: 1200px)
+        @content
+
 *
     // outline: solid 1px red
 
@@ -22,14 +26,10 @@ body
     font-family: "Lobster", "Noto Sans TC", sans-serif,  cursive
     box-sizing: border-box
     position: fixed
+    width: 100vw
     height: 100vh
     padding: 40px 0
     background: rgb(20, 30, 43)
-    // background-image: url(../pic/hiking.png)
-    // background-size: contain
-    // background-position: top center
-    // background-repeat: no-repeat
-    // background-color: #000D27
     @include rwd-sm
         padding: 50px
 
@@ -37,17 +37,38 @@ header
     margin-bottom: 2rem
     padding: 0 1rem
     font-size: 0
+    @include rwd-lg
+        max-width: 1440px
+        margin: 0 auto
+        margin-bottom: 2rem
     > div
         display: inline-block
         width: calc( 100% - 80px )
+        @include rwd-md
+            width: calc( 100% - 120px )
+        @include rwd-lg
+            width: calc( 100% - 160px )
     h1
         margin: 0
-        padding: 0 0 0 1rem
+        padding: .5rem 0 0 1rem
         font-size: 2rem
         color: white
+        @include rwd-sm
+            font-size: 2.5rem
+        @include rwd-md
+            padding: 20px
+        @include rwd-lg
+            padding: 30px
+            font-size: 3rem
+        @include rwd-xl
+            font-size: 3.5rem
     img
         width: 80px
         vertical-align: top
+        @include rwd-md
+            width: 120px
+        @include rwd-lg
+            width: 160px
     nav
         position: absolute
         top: 0
@@ -58,10 +79,22 @@ header
         font-size: 1.5rem
         background: rgba(204, 204, 204, 0.9)
         transition: all 0.7s ease
+        @include rwd-sm
+            position: relative
+            width: initial
+            height: initial
+            right: 0
+            padding: 0
+            color: white
+            text-align: end
+            background-color: transparent
         #nav-addRecord, #nav-searchRecords, #logout
             padding: 0 0 0 15px
             margin: 0 0 1.5rem 0
             border-bottom: solid 1px black
+            @include rwd-sm
+                display: inline
+                border-bottom: none
         .aside
             position: absolute
             top: 90px
@@ -71,6 +104,8 @@ header
             border-radius: 50% 0 0 50%
             background-color: #eee
             background-image: url(../pic/arrow.png)
+            @include rwd-sm
+                display: none
     nav.active
         right: 0
         .aside
@@ -109,7 +144,7 @@ section#lists
         // margin-top: 20px
         font-size: 30px
         list-style-type: none
-        height: 90vh
+        height: 80vh
         overflow: scroll
         background: linear-gradient(rgb(49, 69, 95), rgb(68, 99, 138))
     li
