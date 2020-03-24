@@ -84,7 +84,7 @@ function get_search_record(){
 };
 
 // 登出
-const btnDanger = document.querySelector('.btn-danger');
+const btnDanger = document.querySelector('#logout');
 btnDanger.addEventListener('click', () => {
     fetch(logout, {
         method: 'POST',
@@ -213,7 +213,7 @@ function moreImfor(callbackRecords) {
 const add = document.querySelector('#addRecords');
 const search = document.querySelector('#search');
 
-document.querySelector('.btn-add').addEventListener('click', () => {
+document.querySelector('#nav-addRecord').addEventListener('click', () => {
     add.setAttribute("style", "display:block")
 });
 
@@ -227,7 +227,7 @@ document.querySelectorAll('.btn-secondary').forEach(e => e.addEventListener('cli
 )
 
 // 點擊按鈕進入 搜尋 頁面
-document.querySelector('.btn-search').addEventListener('click', () => {
+document.querySelector('#nav-searchRecords').addEventListener('click', () => {
     search.setAttribute("style", "display:block");
 });
 

@@ -45,12 +45,12 @@ header nav {
   height: 100vh;
   padding: 70px 0;
   font-size: 1.5rem;
-  background: rgba(204, 204, 204, 0.8);
+  background: rgba(204, 204, 204, 0.9);
   -webkit-transition: all 0.7s ease;
   transition: all 0.7s ease;
 }
 
-header nav > div {
+header nav #nav-addRecord, header nav #nav-searchRecords, header nav #logout {
   padding: 0 0 0 15px;
   margin: 0 0 1.5rem 0;
   border-bottom: solid 1px black;
@@ -62,8 +62,6 @@ header nav .aside {
   left: -34px;
   width: 34px;
   height: 45px;
-  padding: 0;
-  margin: 0;
   border-radius: 50% 0 0 50%;
   background-color: #eee;
   background-image: url(../pic/arrow.png);
@@ -79,38 +77,34 @@ header nav.active .aside {
   border-radius: 0 50% 50% 0;
 }
 
-header .btn-search, header .btn-add, header .btn-logout, header .aside {
+header .searchRecordsIcon, header .addRecordsIcon, header .logoutIcon, header .aside {
   background-size: 70%;
   background-position: center center;
   background-repeat: no-repeat;
 }
 
-header .btn-search, header .btn-add, header .btn-logout {
+header .searchRecordsIcon, header .addRecordsIcon, header .logoutIcon {
   display: inline-block;
-  vertical-align: top;
   width: 36px;
   height: 36px;
   margin: 0 .5rem 0 0;
   border: solid 2px black;
   border-radius: 50%;
+  vertical-align: top;
   background-color: #28C3D4;
 }
 
-header .btn-search {
+header .searchRecordsIcon {
   background-image: url(../pic/loupe.png);
 }
 
-header .btn-add {
+header .addRecordsIcon {
   background-image: url(../pic/plus-sign.png);
 }
 
-header .btn-logout {
-  background-color: #ff2e2e;
+header .logoutIcon {
+  background-color: #ff4a4a;
   background-image: url(../pic/logout.png);
-}
-
-header button {
-  vertical-align: top;
 }
 
 section#lists {
