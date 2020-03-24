@@ -276,27 +276,25 @@ section#addRecords, #list, #list_ptt, #search {
 }
 
 .add, .list, .search {
-  width: 400px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#4c9b6a), to(#62c286));
+  background: linear-gradient(#4c9b6a, #62c286);
   border-radius: 20px;
 }
 
-@media (max-width: 1024px) {
-  .add, .list, .search {
-    width: auto;
-  }
-}
-
-.add h5, .list h5, .search h5 {
+.add h3, .list h3, .search h3 {
   font-size: 30px;
   text-align: center;
   margin-bottom: 2rem;
 }
 
 .add input, .list input, .search input {
+  display: block;
   margin-bottom: 10px;
+  border-bottom: solid 1px #000;
+  background-color: transparent;
+  border: transparent;
 }
 
 .add textarea, .list textarea, .search textarea {

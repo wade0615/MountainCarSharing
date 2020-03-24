@@ -192,18 +192,18 @@ function moreImfor(callbackRecords) {
 
         if ( thisRecord.type === 1 ) {
             list.setAttribute("style", "display:block");
-            list_subject.setAttribute("value", thisRecord.subject);
-            list_departure_date.setAttribute("value", thisRecord.departure_date);
-            list_departure.setAttribute("value", thisRecord.departure);
-            list_destination.setAttribute("value", thisRecord.destination);
-            list_seat .setAttribute("value", thisRecord.seat);
-            list_description.setAttribute("value", thisRecord.description);
+            list_subject.setAttribute("value", `共乘主題：${thisRecord.subject}`);
+            list_departure_date.setAttribute("value", `共乘日期：${thisRecord.departure_date}`);
+            list_departure.setAttribute("value", `出發地：${thisRecord.departure}`);
+            list_destination.setAttribute("value", `目的地：${thisRecord.destination}`);
+            list_seat .setAttribute("value", `剩餘座位：${thisRecord.seat}`);
+            list_description.setAttribute("placeholder", thisRecord.description);
         } else if (thisRecord.type === 2) {
             list_ptt.setAttribute("style", "display:block");
-            list_ptt_subject.setAttribute("value", thisRecord.subject);
-            list_ptt_departure_date.setAttribute("value", thisRecord.departure_date);
+            list_ptt_subject.setAttribute("value", `共乘主題：${thisRecord.subject}`);
+            list_ptt_departure_date.setAttribute("value", `共乘日期：${thisRecord.departure_date}`);
+            list_ptt_description.setAttribute("placeholder", thisRecord.description);
             pttUrl.setAttribute("href", thisRecord.ptt_url);
-            list_ptt_description.setAttribute("value", thisRecord.description);
         }
     }))
 }
