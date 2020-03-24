@@ -135,6 +135,11 @@ header nav {
   }
 }
 
+header nav h2 {
+  display: inline;
+  font-size: 1.5rem;
+}
+
 header nav #nav-addRecord, header nav #nav-searchRecords, header nav #logout {
   padding: 0 0 0 15px;
   margin: 0 0 1.5rem 0;
