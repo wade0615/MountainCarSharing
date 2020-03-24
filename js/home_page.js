@@ -209,12 +209,13 @@ function moreImfor(callbackRecords) {
 }
 
 
-// 點擊按鈕開始新增共乘
+// 點擊按鈕進入 新增 頁面
 const add = document.querySelector('#addRecords');
 const search = document.querySelector('#search');
 
 document.querySelector('#nav-addRecord').addEventListener('click', () => {
     add.setAttribute("style", "display:block")
+    nav.classList.toggle('active')
 });
 
 // 取消返回主頁
@@ -229,6 +230,7 @@ document.querySelectorAll('.btn-secondary').forEach(e => e.addEventListener('cli
 // 點擊按鈕進入 搜尋 頁面
 document.querySelector('#nav-searchRecords').addEventListener('click', () => {
     search.setAttribute("style", "display:block");
+    nav.classList.toggle('active')
 });
 
 // 一但開始 搜尋 先清空<ul>
