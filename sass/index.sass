@@ -1,8 +1,4 @@
 
-@mixin mediaquery-mobile
-    @media (max-width: 1024px)
-        @content
-
 @mixin rwd-sm
     @media (min-width: 576px)
         @content
@@ -19,90 +15,12 @@
     // outline: solid 1px white
     box-sizing: border-box
 
-html
-    // font-size: 18px
 body
     font-family: "Lobster", "Noto Sans TC", sans-serif,  cursive
-    // font-size: 18px
-    // height: 100vhs
-    // padding: 100px calc( (100% - 400px)/2 )
     padding: 60px 50px
-    // background-color: #AEE7E8
     background: linear-gradient(rgb(117, 117, 117), rgb(70, 70, 70))
-    // @include mediaquery-mobile
-    //     padding: 50px 30px
     @include rwd-sm
         height: 100vh
-
-.sign-up
-    display: none
-.sign-in
-    display: none
-
-.card
-    width: 400px
-    margin: 0 auto
-    border-radius: 10px
-    background-color: #AEE7E8
-    border: none
-    @include mediaquery-mobile
-        width: 255px
-    h5
-        font-size: 40px
-        margin: 40px auto
-        padding: 5px 10px
-        border-radius: 50%
-        width: 150px
-        height: 150px
-        background-image: url(../pic/小山共乘.png)
-        background-size: 70%
-        background-position: center center
-        background-repeat: no-repeat
-    #login1,#login2,#login3,#register1,#register2,#register3
-        width: 40px
-        background-size: 70%
-        background-position: center center
-        background-repeat: no-repeat
-    #login1,#register1
-        background-image: url(../pic/user.png)
-    #login2,#register2,#register3
-        background-image: url(../pic/key.png)
-    .login
-        text-align: center
-    button
-        color: white
-        font-weight: 600
-        width: 100px
-        border-radius: 20px
-        border: solid 1px
-        @include mediaquery-mobile
-            display: block
-            margin: 0 auto
-    .btn-login,.btn-register
-        background-color: #248EA9
-        border-color: #28C3D4
-        margin-right: 20px
-        @include mediaquery-mobile
-            margin-right: auto
-    .btn-login:hover,.bt-sign-up:hover,.bt-sign-in:hover,.btn-register:hover
-        color: black
-        background-color: #28C3D4
-        border-color: #28C3D4
-    .bt-sign-up,.bt-sign-in
-        color: #28C3D4
-        border-color: #28C3D4
-        @include mediaquery-mobile
-            margin-top: 10px
-
-figure
-    display: inline-block
-    height: 0
-    width: 25%
-    margin: 0
-    background-size: 60px auto
-    background-position: top center
-    background-repeat: no-repeat
-
 
 main
     @include rwd-lg
