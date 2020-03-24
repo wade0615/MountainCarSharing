@@ -157,11 +157,11 @@ function recordlist(callbackRecords) {
         if ( callbackRecord.type === 1 ) {
             ul.appendChild(li);
             li.setAttribute('value', `${index}`)
-            li.innerHTML = `<span class="local_data">[站內]</span><p>${callbackRecord.subject}</p>`;
+            li.innerHTML = `<span class="local_data">站內</span><p>${callbackRecord.subject}</p>`;
         } else if (callbackRecord.type === 2) {
             ul.appendChild(li);
             li.setAttribute('value', `${index}`)
-            li.innerHTML = `<span class="ptt_data">[PTT]</span><p>${callbackRecord.subject}</p>`;
+            li.innerHTML = `<span class="ptt_data">PTT</span><p>${callbackRecord.subject}</p>`;
         }
         }
     )

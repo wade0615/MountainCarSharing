@@ -29,16 +29,21 @@ body
     position: fixed
     width: 100vw
     height: 100vh
-    padding: 40px 0
+    padding: 40px 0 0 0
     background: rgb(20, 30, 43)
     @include rwd-sm
         position: static
         padding: 50px
+    @include rwd-lg
+        height: initial
 
 header
-    margin-bottom: 2rem
+    height: 15vh
     padding: 0 1rem
     font-size: 0
+    @include rwd-md
+        height: initial
+        margin-bottom: 1rem
     @include rwd-lg
         max-width: 1440px
         margin: 0 auto
@@ -135,14 +140,19 @@ header
         background-color: rgb(255, 74, 74)
         background-image: url(../pic/logout.png)
 
-section#lists
+main
+    @include rwd-lg
+        max-width: 1440px
+        margin: 0 auto
+
+section#recordList
     color: white
     ul
         margin: 0
         padding: 0
         font-size: 1.5rem
         list-style-type: none
-        height: 75vh
+        height: 70vh
         overflow: scroll
         background: linear-gradient(rgb(49, 69, 95), rgb(68, 99, 138))
     li
@@ -150,16 +160,18 @@ section#lists
         padding: 0 2rem
         border-bottom: 1px solid #000
         background: transparent
+        @include rwd-md
+            margin-bottom: 1.5rem
         span
-            // margin-right: 10px
+            @include rwd-md
+                margin-right: 2rem
+        p
+            @include rwd-md
+                display: inline
         .local_data
             color: #ffbb00
         .ptt_data
             color: #00ff04
-            font-weight: bold
-        p,a
-            @include mediaquery-mobile
-                font-size: 22px
 
 section#addRecords, #list, #list_ptt, #search
     display: none
@@ -172,7 +184,6 @@ section#addRecords, #list, #list_ptt, #search
     background-color: rgba(170, 170, 170, 0.7)
     @include mediaquery-mobile
         padding: 40px 0
-        // height: auto
 .add,.list,.search
     width: 400px
     margin: 0 auto
