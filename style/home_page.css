@@ -346,8 +346,11 @@ section#addRecords, #list, #list_ptt, #search {
   display: block;
   width: 60%;
   margin: 20px auto 0;
-  background: #62c286;
   border-radius: 1rem;
+}
+
+.add button.backToHomepage, .list button.backToHomepage, .search button.backToHomepage {
+  background: #62c286;
 }
 
 .search {
