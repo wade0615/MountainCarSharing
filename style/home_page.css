@@ -11,6 +11,7 @@ body {
 
 @media (min-width: 576px) {
   body {
+    position: static;
     padding: 50px;
   }
 }
@@ -192,31 +193,24 @@ header .logoutIcon {
 }
 
 section#lists {
-  background-color: rgba(170, 170, 170, 0.8);
   color: white;
-}
-
-@media (max-width: 1024px) {
-  section#lists {
-    background-color: rgba(170, 170, 170, 0.5);
-  }
 }
 
 section#lists ul {
   margin: 0;
   padding: 0;
-  font-size: 30px;
+  font-size: 1.5rem;
   list-style-type: none;
-  height: 80vh;
+  height: 75vh;
   overflow: scroll;
   background: -webkit-gradient(linear, left top, left bottom, from(#31455f), to(#44638a));
   background: linear-gradient(#31455f, #44638a);
 }
 
 section#lists li {
-  list-style-position: inside;
+  margin: 1rem;
+  padding: 0 2rem;
   border-bottom: 1px solid #000;
-  margin-top: 15px;
   background: transparent;
 }
 
@@ -295,6 +289,12 @@ section#addRecords, #list, #list_ptt, #search {
 }
 
 .search {
+  text-align: center;
+}
+
+footer {
+  padding: 10px;
+  color: wheat;
   text-align: center;
 }
 /*# sourceMappingURL=home_page.css.map */

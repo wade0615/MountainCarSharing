@@ -22,6 +22,7 @@
 *
     // outline: solid 1px red
 
+
 body
     font-family: "Lobster", "Noto Sans TC", sans-serif,  cursive
     box-sizing: border-box
@@ -31,6 +32,7 @@ body
     padding: 40px 0
     background: rgb(20, 30, 43)
     @include rwd-sm
+        position: static
         padding: 50px
 
 header
@@ -134,23 +136,19 @@ header
         background-image: url(../pic/logout.png)
 
 section#lists
-    background-color: rgba(170, 170, 170, 0.8)
     color: white
-    @include mediaquery-mobile
-        background-color: rgba(170, 170, 170, 0.5)
     ul
         margin: 0
         padding: 0
-        // margin-top: 20px
-        font-size: 30px
+        font-size: 1.5rem
         list-style-type: none
-        height: 80vh
+        height: 75vh
         overflow: scroll
         background: linear-gradient(rgb(49, 69, 95), rgb(68, 99, 138))
     li
-        list-style-position: inside
+        margin: 1rem
+        padding: 0 2rem
         border-bottom: 1px solid #000
-        margin-top: 15px
         background: transparent
         span
             // margin-right: 10px
@@ -160,7 +158,6 @@ section#lists
             color: #00ff04
             font-weight: bold
         p,a
-            // display: inline
             @include mediaquery-mobile
                 font-size: 22px
 
@@ -206,4 +203,7 @@ section#addRecords, #list, #list_ptt, #search
     text-align: center
     .btn-group
 
-
+footer
+    padding: 10px
+    color: wheat
+    text-align: center
