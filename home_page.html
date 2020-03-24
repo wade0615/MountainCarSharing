@@ -41,27 +41,26 @@
         <!-- 站內共乘詳細資訊 -->
         <section id="list">
             <div class="list">
-                <h3 class="card-title">詳細資訊</h3>
-                <input type="text" id="list_subject" placeholder="共乘主題" disabled="disabled">
-                <input type="text" id="list_departure_date" placeholder="出發日期YYYY/MM/DD" disabled="disabled">
-                <input type="text" id="list_departure" placeholder="出發地" disabled="disabled">
-                <input type="text" id="list_destination" placeholder="目的地" disabled="disabled">
-                <input type="text" id="list_seat" placeholder="剩餘座位" disabled="disabled">
-                <h3>備註</h3>
+                <h3 id="list_subject"></h3>
+                <!-- <input type="text" id="list_subject" placeholder="共乘主題" disabled="disabled"> -->
+                <span>共乘日期：</span><p id="list_departure_date"></p>
+                <span>出發地：</span><p id="list_departure"></p>
+                <span>目的地：</span><p id="list_destination"></p>
+                <span>剩餘座位：</span><p id="list_seat" ></p>
+                <h3>詳細資訊</h3>
                 <textarea name="備註" id="list_description" disabled="disabled"></textarea>
-                <button type="button" class="btn btn-block btn-secondary">離開</button>
+                <button type="button" class="backToHomepage">離開</button>
             </div>
         </section>
         <!-- PTT共乘詳細資訊 -->
         <section id="list_ptt">
             <div class="list">
-                <h3 class="card-title">詳細資訊</h3>
-                <input type="text" id="list_ptt_subject" placeholder="共乘主題" disabled="disabled">
-                <input type="text" id="list_ptt_departure_date" placeholder="出發日期YYYY/MM/DD" disabled="disabled">
-                <a id="list_ptt_url" href="" target="_blank">點我去原文</a>
-                <h3>備註</h3>
+                <h3 id="list_ptt_subject"></h3>
+                <span>共乘日期：</span><p id="list_ptt_departure_date"></p>
+                <span>原文連結：</span><a id="list_ptt_url" target="_blank">傳送門在此</a>
+                <h3>詳細資訊</h3>
                 <textarea name="備註" id="list_ptt_description" disabled="disabled"></textarea>
-                <button type="button" class="btn btn-block btn-secondary">離開</button>
+                <button type="button" class="backToHomepage">離開</button>
             </div>
         </section>
         <!-- 搜尋共乘 -->
@@ -80,7 +79,7 @@
                     </select>
                 </div>
                 <button type="button" class="btn btn-block btn-warning">搜尋</button>
-                <button type="button" class="btn btn-block btn-secondary">取消</button>
+                <button type="button" class="backToHomepage">取消</button>
             </div>
         </section>
         <!-- 新增共乘 -->
@@ -95,7 +94,7 @@
                 <h3>備註</h3>
                 <textarea name="備註" id="add_description" placeholder="敘述活動內容"></textarea>
                 <button type="button" class="btn btn-block btn-info">完成</button>
-                <button type="button" class="btn btn-block btn-secondary">取消</button>
+                <button type="button" class="backToHomepage">取消</button>
             </div>
         </section>
     </main>

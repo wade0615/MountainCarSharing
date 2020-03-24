@@ -178,39 +178,67 @@ section#recordList
 
 section#addRecords, #list, #list_ptt, #search
     display: none
-    position: absolute
     width: 100vw
     height: 100vh
+    position: absolute
     top: 0
     left: 0
     background-color: rgba(170, 170, 170, 0.7)
 .add,.list,.search
-    margin: 0 auto
+    width: 100%
+    height: 100%
+    margin: auto
     padding: 20px
-    background: linear-gradient(rgb(76, 155, 106), rgb(98, 194, 134))
+    font-size: 1.2rem
+    background: linear-gradient(rgb(117, 117, 117), rgb(70, 70, 70))
     border-radius: 20px
+    @include rwd-sm
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        margin: auto
+        width: 500px
+        height: 80vh
+        overflow: scroll
+    
     h3
         font-size: 30px
         text-align: center
-        margin-bottom: 2rem
-    input
-        display: block
+        margin-top: 2rem
+        margin-bottom: 1rem
+    span
+        display: inline-block
+        width: 30%
+    a
+        color: rgb(82, 160, 255)
+
+    input,p
+        display: inline-block
+        width: 70%
         margin-bottom: 10px
         border-bottom: solid 1px #000
+        text-align: center
         background-color: transparent
-        border: transparent
+    input
+        background: transparent
     textarea
         display: block
         margin: 0 auto
         width: 100%
-        height: 200px
+        height: 40vh
         border-radius: 8px
-        background-color: rgba(247, 247, 247, 0.6)
+        background-color: rgb(221, 221, 221)
     textarea:focus
         outline: none
     button
         display: block
-        margin: 10px auto 0
+        width: 60%
+        margin: 20px auto 0
+        background: rgb(98, 194, 134)
+        border-radius: 1rem
+
 .search
     text-align: center
     .btn-group
