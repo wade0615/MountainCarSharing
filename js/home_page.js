@@ -210,7 +210,7 @@ function moreImfor(callbackRecords) {
 
 
 // 點擊按鈕開始新增共乘
-const add = document.querySelector('#add');
+const add = document.querySelector('#addRecords');
 const search = document.querySelector('#search');
 
 document.querySelector('.btn-add').addEventListener('click', () => {
@@ -247,3 +247,9 @@ function clean_records() {
     add_seat.setAttribute("value", '');
     add_description.setAttribute("value", '');
 }
+
+//顯示側邊欄
+const nav = document.querySelector('nav');
+document.querySelector('.aside').addEventListener('click', () => {
+    nav.classList.toggle('active')
+});

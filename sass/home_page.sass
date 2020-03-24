@@ -3,46 +3,107 @@
     @media (max-width: 1024px)
         @content
 
+@mixin rwd-sm
+    @media (min-width: 576px)
+        @content
+
+@mixin rwd-md
+    @media (min-width: 768px)
+        @content
+
+@mixin rwd-lg
+    @media (min-width: 992px)
+        @content
 
 *
-    outline: solid 1px black
+    // outline: solid 1px red
 
 body
+    font-family: "Lobster", "Noto Sans TC", sans-serif,  cursive
     box-sizing: border-box
-    font-family: 'Nunito'
+    position: fixed
     height: 100vh
-    padding: 100px 200px
-    background-image: url(../pic/hiking.png)
-    background-size: contain
-    background-position: top center
-    background-repeat: no-repeat
-    background-color: #000D27
-    @include mediaquery-mobile
-        padding: 50px 30px
+    padding: 40px 0
+    background: rgb(20, 30, 43)
+    // background-image: url(../pic/hiking.png)
+    // background-size: contain
+    // background-position: top center
+    // background-repeat: no-repeat
+    // background-color: #000D27
+    @include rwd-sm
+        padding: 50px
 
 header
-    position: relative
-    .btn-search,.btn-add
-        font-size: 1rem
-        float: right
-        width: 36px
-        height: 36px
-        cursor: pointer
-        border: solid 2px black
-        border-radius: 50%
+    margin-bottom: 2rem
+    padding: 0 1rem
+    font-size: 0
+    > div
+        display: inline-block
+        width: calc( 100% - 80px )
+    h1
+        margin: 0
+        padding: 0 0 0 1rem
+        font-size: 2rem
+        color: white
+    img
+        width: 80px
+        vertical-align: top
+    nav
+        position: absolute
+        top: 0
+        right: -50vw
+        width: 50vw
+        height: 100vh
+        padding: 70px 0
+        font-size: 1.5rem
+        background: rgba(204, 204, 204, 0.8)
+        transition: all 0.7s ease
+        > div
+            padding: 0 0 0 15px
+            margin: 0 0 1.5rem 0
+            border-bottom: solid 1px black
+        .aside
+            position: absolute
+            top: 90px
+            left: -34px
+            width: 34px
+            height: 45px
+            padding: 0
+            margin: 0
+            border-radius: 50% 0 0 50%
+            background-color: #eee
+            background-image: url(../pic/arrow.png)
+    nav.active
+        right: 0
+        .aside
+            transform: rotate(180deg)
+            border-radius: 0 50% 50% 0
+
+    .btn-search,.btn-add,.btn-logout,.aside
         background-size: 70%
         background-position: center center
         background-repeat: no-repeat
+    .btn-search,.btn-add,.btn-logout
+        display: inline-block
+        vertical-align: top
+        width: 36px
+        height: 36px
+        margin: 0 .5rem 0 0
+        border: solid 2px black
+        border-radius: 50%
         background-color: #28C3D4
     .btn-search
         background-image: url(../pic/loupe.png)
-        margin-right: 10px
+        // margin-right: 10px
     .btn-add
         background-image: url(../pic/plus-sign.png)
+    .btn-logout
+        background-color: rgb(255, 46, 46)
+        background-image: url(../pic/logout.png)
     button
-        
+        vertical-align: top
 
-main
+section#lists
     background-color: rgba(170, 170, 170, 0.8)
     color: white
     @include mediaquery-mobile
@@ -50,15 +111,17 @@ main
     ul
         margin: 0
         padding: 0
-        margin-top: 20px
+        // margin-top: 20px
         font-size: 30px
         list-style-type: none
-        height: 70vh
+        height: 90vh
         overflow: scroll
+        background: linear-gradient(rgb(49, 69, 95), rgb(68, 99, 138))
     li
         list-style-position: inside
         border-bottom: 1px solid #000
         margin-top: 15px
+        background: transparent
         span
             // margin-right: 10px
         .local_data
@@ -71,7 +134,7 @@ main
             @include mediaquery-mobile
                 font-size: 22px
 
-section
+section#addRecords, #list, #list_ptt, #search
     display: none
     position: absolute
     width: 100%

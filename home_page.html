@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>小山共乘</title>
+    <title>小山共乘dev</title>
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <!-- 響應式中繼標籤 -->
@@ -15,90 +15,92 @@
     <link rel="stylesheet" href="./style/home_page.css">
     <!-- Nunito字型 -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <!-- 字型 Noto Sans TC,Lobster -->
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Noto+Sans+TC&display=swap&subset=chinese-traditional" rel="stylesheet">
 </head>
 <body>
     <header>
-        <button type="button" class="btn btn-danger">logout</button>
-        <div class="btn-add"></div>
-        <div class="btn-search"></div>
+        <img src="./pic/小山共乘.png">
+        <div><h1>Mountain Car Sharing</h1></div>
+        <nav>
+            <div><div class="btn-add"></div><span>新增共乘</span></div>
+            <div><div class="btn-search"></div><span>搜尋共乘</span></div>
+            <div><div class="btn-logout"></div><span>Logout</span></div>
+            <div class="aside"></div>
+            <button type="button" class="btn btn-danger">logout</button>
+        </nav>
     </header>
     <main>
-        <ul>
-            <!-- <li class="row">
-                <span>[站內]</span>
-                    <p>鳶嘴山之行</p>
-            </li> -->
-            <!-- <li class="row no-gutters">
-                <p class="col-3">[PTT]</p>
-                <p class="col-9">[揪人]1/21-1/23北大武</p>
-            </li>
-            <li class="row no-gutters">
-                <p class="col-3">[站內]</p>
-                <p class="col-9">陽明山縱走</p>
-            </li> -->
-        </ul>
-    </main>
-    <!-- 新增共乘 -->
-    <section id="add">
-        <div class="add">
-            <h5 class="card-title">新增共乘</h5>
-            <input type="text" class="form-control col-sm-9" id="add_subject" placeholder="共乘主題">
-            <input type="text" class="form-control col-sm-9" id="add_departure_date" placeholder="出發日期YYYY/MM/DD">
-            <input type="text" class="form-control col-sm-9" id="add_departure" placeholder="出發地">
-            <input type="text" class="form-control col-sm-9" id="add_destination" placeholder="目的地">
-            <input type="text" class="form-control col-sm-9" id="add_seat" placeholder="剩餘座位">
-            <h3>備註</h3>
-            <textarea name="備註" id="add_description" placeholder="敘述活動內容"></textarea>
-            <button type="button" class="btn btn-block btn-info">完成</button>
-            <button type="button" class="btn btn-block btn-secondary">取消</button>
-        </div>
-    </section>
-    <!-- 站內共乘詳細資訊 -->
-    <section id="list">
-        <div class="list">
-            <h5 class="card-title">詳細資訊</h5>
-            <input type="text" class="form-control col-sm-9" id="list_subject" placeholder="共乘主題" disabled="disabled">
-            <input type="text" class="form-control col-sm-9" id="list_departure_date" placeholder="出發日期YYYY/MM/DD" disabled="disabled">
-            <input type="text" class="form-control col-sm-9" id="list_departure" placeholder="出發地" disabled="disabled">
-            <input type="text" class="form-control col-sm-9" id="list_destination" placeholder="目的地" disabled="disabled">
-            <input type="text" class="form-control col-sm-9" id="list_seat" placeholder="剩餘座位" disabled="disabled">
-            <h3>備註</h3>
-            <textarea name="備註" id="list_description"></textarea>
-            <button type="button" class="btn btn-block btn-secondary">離開</button>
-        </div>
-    </section>
-    <!-- PTT共乘詳細資訊 -->
-    <section id="list_ptt">
-        <div class="list">
-            <h5 class="card-title">詳細資訊</h5>
-            <input type="text" class="form-control col-sm-9" id="list_ptt_subject" placeholder="共乘主題" disabled="disabled">
-            <input type="text" class="form-control col-sm-9" id="list_ptt_departure_date" placeholder="出發日期YYYY/MM/DD" disabled="disabled">
-            <!-- <input type="text" class="form-control col-sm-9" id="list_ptt_url" placeholder="PTT原文網址"> -->
-            <a id="list_ptt_url" href="" target="_blank">點我去原文</a>
-            <h3>備註</h3>
-            <textarea name="備註" id="list_ptt_description"></textarea>
-            <button type="button" class="btn btn-block btn-secondary">離開</button>
-        </div>
-    </section>
-    <!-- 搜尋共乘 -->
-    <section id="search">
-        <div class="search">
-            <h5 class="card-title">搜尋共乘</h5>            
-            <input type="text" class="form-control col-sm-9" id="search_departure" placeholder="出發地">
-            <input type="text" class="form-control col-sm-9" id="search_destination" placeholder="目的地">
-            <input type="text" class="form-control col-sm-9" id="search_departure_date" placeholder="出發日期YYYY-MM-DD">
-            <!-- <textarea name="備註" id="search_description" placeholder="敘述活動內容"></textarea> -->
-            <div class="form-group">
-                <select class="form-control" id="search_range">
-                    <option value="">全站搜尋</option>
-                    <option value="1">站內搜尋</option>
-                    <option value="2">站外搜尋</option>                    
-                </select>
+        <section id="lists">
+            <ul>
+                <!-- <li class="row">
+                    <span>[站內]</span>
+                        <p>鳶嘴山之行</p>
+                </li> -->
+            </ul>
+        </section>
+        <!-- 新增共乘 -->
+        <section id="addRecords">
+            <div class="add">
+                <h5 class="card-title">新增共乘</h5>
+                <input type="text" class="form-control col-sm-9" id="add_subject" placeholder="共乘主題">
+                <input type="text" class="form-control col-sm-9" id="add_departure_date" placeholder="出發日期YYYY/MM/DD">
+                <input type="text" class="form-control col-sm-9" id="add_departure" placeholder="出發地">
+                <input type="text" class="form-control col-sm-9" id="add_destination" placeholder="目的地">
+                <input type="text" class="form-control col-sm-9" id="add_seat" placeholder="剩餘座位">
+                <h3>備註</h3>
+                <textarea name="備註" id="add_description" placeholder="敘述活動內容"></textarea>
+                <button type="button" class="btn btn-block btn-info">完成</button>
+                <button type="button" class="btn btn-block btn-secondary">取消</button>
             </div>
-            <button type="button" class="btn btn-block btn-warning">搜尋</button>
-            <button type="button" class="btn btn-block btn-secondary">取消</button>
-        </div>
-    </section>
+        </section>
+        <!-- 站內共乘詳細資訊 -->
+        <section id="list">
+            <div class="list">
+                <h5 class="card-title">詳細資訊</h5>
+                <input type="text" class="form-control col-sm-9" id="list_subject" placeholder="共乘主題" disabled="disabled">
+                <input type="text" class="form-control col-sm-9" id="list_departure_date" placeholder="出發日期YYYY/MM/DD" disabled="disabled">
+                <input type="text" class="form-control col-sm-9" id="list_departure" placeholder="出發地" disabled="disabled">
+                <input type="text" class="form-control col-sm-9" id="list_destination" placeholder="目的地" disabled="disabled">
+                <input type="text" class="form-control col-sm-9" id="list_seat" placeholder="剩餘座位" disabled="disabled">
+                <h3>備註</h3>
+                <textarea name="備註" id="list_description"></textarea>
+                <button type="button" class="btn btn-block btn-secondary">離開</button>
+            </div>
+        </section>
+        <!-- PTT共乘詳細資訊 -->
+        <section id="list_ptt">
+            <div class="list">
+                <h5 class="card-title">詳細資訊</h5>
+                <input type="text" class="form-control col-sm-9" id="list_ptt_subject" placeholder="共乘主題" disabled="disabled">
+                <input type="text" class="form-control col-sm-9" id="list_ptt_departure_date" placeholder="出發日期YYYY/MM/DD" disabled="disabled">
+                <!-- <input type="text" class="form-control col-sm-9" id="list_ptt_url" placeholder="PTT原文網址"> -->
+                <a id="list_ptt_url" href="" target="_blank">點我去原文</a>
+                <h3>備註</h3>
+                <textarea name="備註" id="list_ptt_description"></textarea>
+                <button type="button" class="btn btn-block btn-secondary">離開</button>
+            </div>
+        </section>
+        <!-- 搜尋共乘 -->
+        <section id="search">
+            <div class="search">
+                <h5 class="card-title">搜尋共乘</h5>            
+                <input type="text" class="form-control col-sm-9" id="search_departure" placeholder="出發地">
+                <input type="text" class="form-control col-sm-9" id="search_destination" placeholder="目的地">
+                <input type="text" class="form-control col-sm-9" id="search_departure_date" placeholder="出發日期YYYY-MM-DD">
+                <!-- <textarea name="備註" id="search_description" placeholder="敘述活動內容"></textarea> -->
+                <div class="form-group">
+                    <select class="form-control" id="search_range">
+                        <option value="">全站搜尋</option>
+                        <option value="1">站內搜尋</option>
+                        <option value="2">站外搜尋</option>                    
+                    </select>
+                </div>
+                <button type="button" class="btn btn-block btn-warning">搜尋</button>
+                <button type="button" class="btn btn-block btn-secondary">取消</button>
+            </div>
+        </section>
+    </main>
 
     <script src="./js/home_page.js"></script>
 </body>
