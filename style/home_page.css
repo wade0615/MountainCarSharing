@@ -326,7 +326,9 @@ section#addRecords, #list, #list_ptt, #search {
 }
 
 .add input, .list input, .search input {
-  background: transparent;
+  margin-bottom: 2rem;
+  border: transparent;
+  border-bottom: solid 1px #000;
 }
 
 .add textarea, .list textarea, .search textarea {
@@ -354,7 +356,16 @@ section#addRecords, #list, #list_ptt, #search {
 }
 
 .search {
+  padding: 10%;
   text-align: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(#b1b1b1), to(#7c7c7c));
+  background: linear-gradient(#b1b1b1, #7c7c7c);
+}
+
+@media (min-width: 768px) {
+  .search {
+    padding: 5%;
+  }
 }
 
 footer {

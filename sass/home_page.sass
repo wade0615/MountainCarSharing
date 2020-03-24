@@ -222,7 +222,10 @@ section#addRecords, #list, #list_ptt, #search
         text-align: center
         background-color: transparent
     input
-        background: transparent
+        margin-bottom: 2rem
+        border: transparent
+        border-bottom: solid 1px #000
+        
     textarea
         display: block
         margin: 0 auto
@@ -242,8 +245,12 @@ section#addRecords, #list, #list_ptt, #search
 
 
 .search
+    padding: 10%
     text-align: center
-    .btn-group
+    background: linear-gradient(rgb(177, 177, 177), rgb(124, 124, 124))
+    @include rwd-md
+        padding: 5%
+
 
 footer
     padding: 10px
