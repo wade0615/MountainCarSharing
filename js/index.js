@@ -40,7 +40,8 @@ btnSignIn.addEventListener('click', () => {
         method: 'POST',
         mode: 'cors',
         headers: {
-            Accept: "application/json; charset=utf-8", "Content-Type": "application/json; charset=utf-8"
+            Accept: "application/json; charset=utf-8", 
+            "Content-Type": "application/json; charset=utf-8"
         },
         body: JSON.stringify({
                 email: signInAccount.value,
@@ -70,7 +71,8 @@ btnSignUp.addEventListener('click', () => {
         method: 'POST',
         mode: 'cors',
         headers: {
-            Accept: "application/json; charset=utf-8", "Content-Type": "application/json; charset=utf-8"
+            Accept: "application/json; charset=utf-8", 
+            "Content-Type": "application/json; charset=utf-8"
         },
         body: JSON.stringify({
                 email: signUpAccount.value,

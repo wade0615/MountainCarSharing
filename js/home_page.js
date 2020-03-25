@@ -27,7 +27,9 @@ function getAllRecord(){
         method: 'GET',
         mode: 'cors',
         headers: {
-            Authorization:`Bearer ${cookie[1]}`, Accept: "application/json; charset=utf-8", "Content-Type": "application/json; charset=utf-8"
+            Authorization:`Bearer ${cookie[1]}`, 
+            Accept: "application/json; charset=utf-8", 
+            "Content-Type": "application/json; charset=utf-8"
             }
         })
         .then(response => {
