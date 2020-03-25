@@ -17,7 +17,7 @@ let cookie = document.cookie.split("=");
 // 一進畫面就先讀取一次第一筆資料
 mainFunction();
 function mainFunction(){
-    console.log(cookie[1])
+    // console.log(cookie[1])
     getAllRecord();
 }
 
@@ -61,7 +61,7 @@ function get_search_record(){
     let search_date = searchDate.value;
     let search_url = `https://carsharing.rayoutstanding.space/api/post?departure_date=${search_date}&departure=${search_departure}&destination=${search_destination}&type=${search_range}&row=100`
 
-    console.log(search_url);
+    // console.log(search_url);
     fetch(search_url, {
         method: 'GET',
         mode: 'cors',
@@ -152,7 +152,7 @@ addRecords.addEventListener('click', () => {
 const ul = document.querySelector('ul');
 
 function recordlist(callbackRecords) {
-    console.log("陣列出共乘資訊", callbackRecords);
+    // console.log("陣列出共乘資訊", callbackRecords);
     callbackRecords.forEach((callbackRecord, index) => {
         let li = document.createElement('li');
 
