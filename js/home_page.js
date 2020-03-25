@@ -108,7 +108,7 @@ btnDanger.addEventListener('click', () => {
 });
 
 // 新增共乘資料
-const btnInfo = document.querySelector('.btn-info');
+const addRecords = document.querySelector('.addRecords');
 const add_subject = document.querySelector('#add_subject');
 const add_departure_date = document.querySelector('#add_departure_date');
 const add_departure = document.querySelector('#add_departure');
@@ -116,7 +116,7 @@ const add_destination = document.querySelector('#add_destination');
 const add_description = document.querySelector('#add_description');
 const add_seat = document.querySelector('#add_seat');
 
-btnInfo.addEventListener('click', () => {
+addRecords.addEventListener('click', () => {
     fetch(post, {
         method: 'POST',
         mode: 'cors',

@@ -361,7 +361,7 @@ section#addRecords, #list, #list_ptt, #search {
   background: #3ea164;
 }
 
-.search {
+.search, .add {
   padding: 10%;
   text-align: center;
   background: -webkit-gradient(linear, left top, left bottom, from(#b1b1b1), to(#7c7c7c));
@@ -369,18 +369,27 @@ section#addRecords, #list, #list_ptt, #search {
 }
 
 @media (min-width: 768px) {
-  .search {
+  .search, .add {
     padding: 5%;
   }
 }
 
-.search .sarchReacords {
+.search .sarchReacords, .add .sarchReacords {
   background: #ffbb28;
   cursor: pointer;
 }
 
-.search .sarchReacords:hover {
+.search .sarchReacords:hover, .add .sarchReacords:hover {
   background: #e29f0f;
+}
+
+.search .addRecords, .add .addRecords {
+  background: #3556e9;
+  cursor: pointer;
+}
+
+.search .addRecords:hover, .add .addRecords:hover {
+  background: #2b43af;
 }
 
 footer {
