@@ -171,19 +171,19 @@ function recordlist(callbackRecords) {
 };
 
 // 列出詳細資訊
-const list = document.querySelector('#list');
-const list_subject = document.querySelector('#list_subject');
-const list_departure_date = document.querySelector('#list_departure_date');
-const list_departure = document.querySelector('#list_departure');
-const list_destination = document.querySelector('#list_destination');
-const list_seat = document.querySelector('#list_seat');
-const list_description = document.querySelector('#list_description');
+const local_detail = document.querySelector('#local_detail');
+const local_detail_subject = document.querySelector('#local_detail_subject');
+const local_detail_departure_date = document.querySelector('#local_detail_departure_date');
+const local_detail_departure = document.querySelector('#local_detail_departure');
+const local_detail_destination = document.querySelector('#local_detail_destination');
+const local_detail_seat = document.querySelector('#local_detail_seat');
+const local_detail_description = document.querySelector('#local_detail_description');
 
-const list_ptt = document.querySelector('#list_ptt');
-const list_ptt_subject = document.querySelector('#list_ptt_subject');
-const list_ptt_departure_date = document.querySelector('#list_ptt_departure_date');
-const list_ptt_description = document.querySelector('#list_ptt_description');
-const pttUrl = document.querySelector("#list_ptt_url");
+const ptt_detail = document.querySelector('#ptt_detail');
+const ptt_detail_subject = document.querySelector('#ptt_detail_subject');
+const ptt_detail_departure_date = document.querySelector('#ptt_detail_departure_date');
+const ptt_detail_description = document.querySelector('#ptt_detail_description');
+const pttUrl = document.querySelector("#ptt_detail_url");
 
 function moreImfor(callbackRecords) {
     let recordsList = document.querySelectorAll('li');
@@ -193,18 +193,18 @@ function moreImfor(callbackRecords) {
         let thisRecord = callbackRecords[thisValue];
 
         if ( thisRecord.type === 1 ) {
-            list.setAttribute("style", "display:block");
-            list_subject.innerHTML = thisRecord.subject;
-            list_departure_date.innerHTML = thisRecord.departure_date;
-            list_departure.innerHTML = thisRecord.departure;
-            list_destination.innerHTML = thisRecord.destination;
-            list_seat.innerHTML = thisRecord.seat;
-            list_description.setAttribute("placeholder", thisRecord.description);
+            local_detail.setAttribute("style", "display:block");
+            local_detail_subject.innerHTML = thisRecord.subject;
+            local_detail_departure_date.innerHTML = thisRecord.departure_date;
+            local_detail_departure.innerHTML = thisRecord.departure;
+            local_detail_destination.innerHTML = thisRecord.destination;
+            local_detail_seat.innerHTML = thisRecord.seat;
+            local_detail_description.setAttribute("placeholder", thisRecord.description);
         } else if (thisRecord.type === 2) {
-            list_ptt.setAttribute("style", "display:block");
-            list_ptt_subject.innerHTML = thisRecord.subject;
-            list_ptt_departure_date.innerHTML = thisRecord.departure_date;
-            list_ptt_description.setAttribute("placeholder", thisRecord.description);
+            ptt_detail.setAttribute("style", "display:block");
+            ptt_detail_subject.innerHTML = thisRecord.subject;
+            ptt_detail_departure_date.innerHTML = thisRecord.departure_date;
+            ptt_detail_description.setAttribute("placeholder", thisRecord.description);
             pttUrl.setAttribute("href", thisRecord.ptt_url);
         }
     }))
@@ -213,7 +213,7 @@ function moreImfor(callbackRecords) {
 
 // 點擊按鈕進入 新增 頁面
 const add = document.querySelector('#addRecords');
-const search = document.querySelector('#search');
+const search = document.querySelector('#searchRecords');
 
 document.querySelector('#nav-addRecord').addEventListener('click', () => {
     add.setAttribute("style", "display:block")
@@ -223,8 +223,8 @@ document.querySelector('#nav-addRecord').addEventListener('click', () => {
 // 取消返回主頁
 document.querySelectorAll('.backToHomepage').forEach(e => e.addEventListener('click', () => {
     add.setAttribute("style", "display:none")
-    list.setAttribute("style", "display:none")
-    list_ptt.setAttribute("style", "display:none")
+    local_detail.setAttribute("style", "display:none")
+    ptt_detail.setAttribute("style", "display:none")
     search.setAttribute("style", "display:none")
     })
 )

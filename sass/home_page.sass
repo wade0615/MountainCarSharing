@@ -1,8 +1,4 @@
 
-@mixin mediaquery-mobile
-    @media (max-width: 1024px)
-        @content
-
 @mixin rwd-sm
     @media (min-width: 576px)
         @content
@@ -177,7 +173,7 @@ section#recordList
         .ptt_data
             color: #00ff04
 
-section#addRecords, #list, #list_ptt, #search
+section#addRecords, #local_detail, #ptt_detail, #searchRecords
     display: none
     width: 100vw
     height: 100vh
@@ -193,6 +189,7 @@ section#addRecords, #list, #list_ptt, #search
     font-size: 1.2rem
     background: linear-gradient(rgb(117, 117, 117), rgb(70, 70, 70))
     border-radius: 20px
+    overflow: scroll
     @include rwd-sm
         position: absolute
         top: 0
