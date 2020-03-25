@@ -235,8 +235,8 @@ document.querySelector('#nav-searchRecords').addEventListener('click', () => {
     nav.classList.toggle('active')
 });
 
-// 一但開始 搜尋 先清空<ul>
-document.querySelector('.btn-warning').addEventListener('click', () => {
+// 一但開始 搜尋 先清空<ul>，再搜尋
+document.querySelector('.sarchReacords').addEventListener('click', () => {
     search.setAttribute("style", "display:none");
     ul.innerHTML = '';
     get_search_record()

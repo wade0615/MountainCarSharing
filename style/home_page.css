@@ -354,6 +354,11 @@ section#addRecords, #list, #list_ptt, #search {
 
 .add button.backToHomepage, .list button.backToHomepage, .search button.backToHomepage {
   background: #62c286;
+  cursor: pointer;
+}
+
+.add button.backToHomepage:hover, .list button.backToHomepage:hover, .search button.backToHomepage:hover {
+  background: #3ea164;
 }
 
 .search {
@@ -367,6 +372,15 @@ section#addRecords, #list, #list_ptt, #search {
   .search {
     padding: 5%;
   }
+}
+
+.search .sarchReacords {
+  background: #ffbb28;
+  cursor: pointer;
+}
+
+.search .sarchReacords:hover {
+  background: #e29f0f;
 }
 
 footer {
