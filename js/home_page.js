@@ -119,7 +119,7 @@ const add_seat = document.querySelector('#add_seat');
 addRecords.addEventListener('click', () => {
     fetch(post, {
         method: 'POST',
-        mode: 'cors',
+        // mode: 'cors',
         headers: {
             Authorization:`Bearer ${cookie[1]}`, 
             Accept: "application/json; charset=utf-8", 
@@ -134,10 +134,11 @@ addRecords.addEventListener('click', () => {
             seat: add_seat.value
             }) 
         })
-        .then(() => {
+        .then((res) => {
+            console.log(res);
             alert("新增成功");
             add.setAttribute("style", "display:none");
-            list.setAttribute("style", "display:none");
+            // list.setAttribute("style", "display:none");
             ul.innerHTML = '';
             getAllRecord();
             clean_records();
@@ -189,7 +190,7 @@ function moreImfor(callbackRecords) {
     let recordsList = document.querySelectorAll('li');
 
     recordsList.forEach(e => e.addEventListener('click', function() {
-        let thisValue = $(this).val();
+        let thisValue = this.value;
         let thisRecord = callbackRecords[thisValue];
 
         if ( thisRecord.type === 1 ) {
@@ -244,12 +245,12 @@ document.querySelector('.sarchReacords').addEventListener('click', () => {
 
 // 清空新增欄位詳細資訊
 function clean_records() {
-    add_subject.setAttribute("value", '');
-    add_departure_date.setAttribute("value", '');
-    add_departure.setAttribute("value", '');
-    add_destination.setAttribute("value", '');
-    add_seat.setAttribute("value", '');
-    add_description.setAttribute("value", '');
+    add_subject.value = '';
+    add_departure_date.value = '';
+    add_departure.value = '';
+    add_destination.value = '';
+    add_description.value = '';
+    add_seat.valu = '';
 }
 
 //顯示側邊欄
