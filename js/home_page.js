@@ -2,7 +2,7 @@
 // 定義 所有共乘資訊 的url
 // const allRecordURL = "https://carsharing.rayoutstanding.space/api/post?row=200"
 // 備用api
-const allRecordURL = "http://5e7ef04c7a92ed001655fe89.mockapi.io/api/allPost/MountainCarSharingPrototype"
+const allRecordURL = "https://5e7ef04c7a92ed001655fe89.mockapi.io/api/allPost/MountainCarSharingPrototype"
 
 // 定義 站內共乘資訊 的url
 const record_ptt = "https://carsharing.rayoutstanding.space/api/post?type=2&row=100"
