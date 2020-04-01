@@ -35,33 +35,34 @@ const signUpPasswordConfirm = document.querySelector("#signUp_pwConfirm");
 
 // 登入
 btnSignIn.addEventListener('click', () => {
-    btnSignIn.innerHTML = 'Loading...'
-    fetch(send_login, {
-        method: 'POST',
-        mode: 'cors',
-        headers: {
-            Accept: "application/json; charset=utf-8", 
-            "Content-Type": "application/json; charset=utf-8"
-        },
-        body: JSON.stringify({
-                email: signInAccount.value,
-                password: signInPassword.value
-            }) 
-        })
-        .then(response => {
-            response = Promise.resolve(response.json());
-            response.then(result => {
-                document.cookie = `login_cookie = ${result.data[0].token}`;
-                // cookie = document.cookie.split("=");
-                // console.log(cookie);
-                window.location.href='./home_page.html'
-            })
-        })
-        .catch(err => {
-            console.log(err);
-            alert("帳號或密碼有誤...請再試一次");
-            btnSignIn.innerHTML = 'Try it again.'
-        })
+    btnSignIn.innerHTML = 'Loading...';
+    window.location.href='./home_page.html';
+    // fetch(send_login, {
+    //     method: 'POST',
+    //     mode: 'cors',
+    //     headers: {
+    //         Accept: "application/json; charset=utf-8", 
+    //         "Content-Type": "application/json; charset=utf-8"
+    //     },
+    //     body: JSON.stringify({
+    //             email: signInAccount.value,
+    //             password: signInPassword.value
+    //         }) 
+    //     })
+    //     .then(response => {
+    //         response = Promise.resolve(response.json());
+    //         response.then(result => {
+    //             document.cookie = `login_cookie = ${result.data[0].token}`;
+    //             // cookie = document.cookie.split("=");
+    //             // console.log(cookie);
+    //             window.location.href='./home_page.html'
+    //         })
+    //     })
+    //     .catch(err => {
+    //         console.log(err);
+    //         alert("帳號或密碼有誤...請再試一次");
+    //         btnSignIn.innerHTML = 'Try it again.'
+    //     })
 })
 
 // 註冊
